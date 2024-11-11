@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Common", "LibraV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Data.Models", "LibraVerse.Data.Models\LibraVerse.Data.Models.csproj", "{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraVerse.Web", "LibraVerse.Web", "{C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraVerse.Data", "LibraVerse.Data", "{DD9CE143-4078-4919-98EA-A97AE3F57AD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +40,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF824128-8A0E-4194-AD67-797008BB2395} = {C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}
+		{E56A056B-9364-49F9-838C-56DD04C04630} = {C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}
+		{868ECE40-F05E-47D1-A5FC-47E43AA5DC77} = {DD9CE143-4078-4919-98EA-A97AE3F57AD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA1713EE-3E33-4662-8930-64D1CE9CF857}
