@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LibraVerse.Common\LibraVerse.Common.csproj" />
     <ProjectReference Include="..\LibraVerse.Web.ViewModels\LibraVerse.Web.ViewModels.csproj" />
   </ItemGroup>
 

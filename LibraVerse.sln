@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse", "LibraVerse\Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Web.ViewModels", "LibraVerse.Web.ViewModels\LibraVerse.Web.ViewModels.csproj", "{E56A056B-9364-49F9-838C-56DD04C04630}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Common", "LibraVerse.Common\LibraVerse.Common.csproj", "{7607D847-FA30-474B-B97B-A586DB8783F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E56A056B-9364-49F9-838C-56DD04C04630}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E56A056B-9364-49F9-838C-56DD04C04630}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E56A056B-9364-49F9-838C-56DD04C04630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7607D847-FA30-474B-B97B-A586DB8783F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7607D847-FA30-474B-B97B-A586DB8783F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7607D847-FA30-474B-B97B-A586DB8783F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7607D847-FA30-474B-B97B-A586DB8783F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

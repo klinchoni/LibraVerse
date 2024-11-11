@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using static LibraVerse.Common.Constants
+
+@{
+    int currentYear = DateTime.UtcNow.Year;
+    string footerNote = (ReleaseYear == currentYear) ?
+        $"{ReleaseYear}" : $"{ReleaseYear} - {currentYear}";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
