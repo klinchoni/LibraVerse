@@ -1,20 +1,22 @@
-using LibraVerse.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace LibraVerse.Controllers
 {
+    using System.Diagnostics;
+    using Microsoft.AspNetCore.Mvc;
+    using LibraVerse.Web.ViewModels;
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        public HomeController()
         {
-            _logger = logger;
+
         }
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Home Page";
+            ViewData["Message"] = "Welcome to the LibraVerse Web App!";
             return View();
         }
 
