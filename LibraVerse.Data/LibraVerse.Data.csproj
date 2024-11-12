@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LibraVerse.Common\LibraVerse.Common.csproj" />
     <ProjectReference Include="..\LibraVerse.Data.Models\LibraVerse.Data.Models.csproj" />
   </ItemGroup>
 
