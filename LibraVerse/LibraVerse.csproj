@@ -17,6 +17,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibraVerse.Common\LibraVerse.Common.csproj" />
+    <ProjectReference Include="..\LibraVerse.Data\LibraVerse.Data.csproj" />
     <ProjectReference Include="..\LibraVerse.Web.ViewModels\LibraVerse.Web.ViewModels.csproj" />
   </ItemGroup>
 
