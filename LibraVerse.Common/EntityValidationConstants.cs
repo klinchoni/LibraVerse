@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace LibraVerse.Common
 {
-    internal class EntityValidationConstants
+    public static class EntityValidationConstants
     {
+        public static class Book
+        {
+            public const int TitleMaxLength = 60;
+        }
     }
 }
