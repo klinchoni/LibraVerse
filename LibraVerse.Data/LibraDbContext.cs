@@ -9,5 +9,16 @@ namespace LibraVerse.Data
 {
     public class LibraDbContext : DbContext
     {
+        //Empty ctor to use it for tests
+        public LibraDbContext()
+        {
+            
+        }
+
+        public LibraDbContext(DbContextOptions options)
+            :base (options)
+        {
+            
+        }
     }
 }
