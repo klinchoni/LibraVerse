@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraVerse.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraVerse.Data
@@ -20,5 +21,6 @@ namespace LibraVerse.Data
         {
             
         }
+        public virtual DbSet<Book> Books { get; set; } = null!;
     }
 }
