@@ -5,13 +5,32 @@ namespace LibraVerse.Common
     {
         public static class Book
         {
-            public const int TitleMaxLength = 50; //The maximum length of the book title.
+            //The maximum length of the book title
+            public const int TitleMaxLength = 50; 
 
-            public const int NameMaxLength = 60; //The maximum length of the Author name.
+            //The minimum and maximum length of the Author name
+            public const int NameMinLength = 10; 
+            public const int NameMaxLength = 60;
 
-            public const int GenreMaxLength = 15; //The maximum length of the Genre.
+            //The minimum and maximum length of the Genre
+            public const int GenreMinLength = 5; 
+            public const int GenreMaxLength = 30;
 
-            public const int DescriptionMaxLength = 300; //The maximum length of the Description.
+            //The date format
+            public const string ReleaseDateFormat = "MM/yyyy";
+
+            //The minimum and maximum length of the Description
+            public const int DescriptionMinLength = 20; 
+            public const int DescriptionMaxLength = 1000;
+
+            //The minimum and maximum length of the Image's url
+            public const int ImageUrlMinLength = 8;
+            public const int ImageUrlMaxLength = 2083;
+
+            //TO DO
+            //public const string PricelMin = 4.00;
+            //public const string PriceMax = 300.00;
         }
     }
 }
+
