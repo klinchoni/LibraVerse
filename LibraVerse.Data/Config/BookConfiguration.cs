@@ -47,7 +47,7 @@ namespace LibraVerse.Data.Config
                     Author = "Christie Golden",
                     Genre = "Fantasy",
                     ReleaseDate = new DateTime(2001, 10, 1),
-                    Description = "Raised from infancy by cruel human masters who sought to mold him into their perfect pawn, Thrall was driven by both the savagery in his heart and the cunning of his upbringing to pursue a destiny he was only beginning to understand to break his bondage and rediscover the ancient traditions of his people."
+                    Description = "Lord of the Clans is a novel by Christie Golden telling the story of Warchief Thrall's rise to glory after the collapse of the Horde. It is an adaptation of the cancelled Blizzard game Warcraft Adventures: Lord of the Clans. It was republished in 2016 for the Blizzard Legends series."
                 },
                 new Book()
                 {

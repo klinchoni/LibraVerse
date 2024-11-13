@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraVerse.Data.Migrations
 {
     [DbContext(typeof(LibraDbContext))]
-    [Migration("20241113060638_InitialDb")]
+    [Migration("20241113064841_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -38,8 +38,8 @@ namespace LibraVerse.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Genre")
                         .IsRequired()
@@ -61,16 +61,16 @@ namespace LibraVerse.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("666e5832-1218-4f61-a2d0-47fd25bba604"),
+                            Id = new Guid("fa0735ec-5fce-47a4-bd3b-2bd353a8115c"),
                             Author = "Christie Golden",
-                            Description = "Raised from infancy by cruel human masters who sought to mold him into their perfect pawn, Thrall was driven by both the savagery in his heart and the cunning of his upbringing to pursue a destiny he was only beginning to understand to break his bondage and rediscover the ancient traditions of his people.",
+                            Description = "Lord of the Clans is a novel by Christie Golden telling the story of Warchief Thrall's rise to glory after the collapse of the Horde. It is an adaptation of the cancelled Blizzard game Warcraft Adventures: Lord of the Clans. It was republished in 2016 for the Blizzard Legends series.",
                             Genre = "Fantasy",
                             ReleaseDate = new DateTime(2001, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Lord of the Clans"
                         },
                         new
                         {
-                            Id = new Guid("ad4f09cf-6117-416b-9920-d1e9009d270f"),
+                            Id = new Guid("a0f8342a-ba3f-4fb2-a64b-a32e72446172"),
                             Author = "Angel Karaliichev",
                             Description = "The collection from 1942, Bulgarcheta introduces us to the magical world of Karaliychev. Some of the stories included are set in magical and fairy-tale lands, while others are instructive tales from his time. The combination of the wisdom of folk proverbs and the author's artistic talent make the book a read that will not fail to be enjoyed by young readers.",
                             Genre = "Fairy tales",
