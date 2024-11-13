@@ -13,6 +13,9 @@
         public string Genre { get; set; } = null!;
         public DateTime ReleaseDate { get; set; }
         public string Description { get; set; } = null!;
+        public string? ImageUrl { get; set; }
+        public decimal Price { get; set; }
+        public bool HasBought { get; set; }
 
     }
 }
