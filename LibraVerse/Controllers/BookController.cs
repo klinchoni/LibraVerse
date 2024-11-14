@@ -16,7 +16,7 @@ namespace LibraVerse.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Book> allBooks = this.dbContext
+            IEnumerable<Book> allBooks = dbContext
                 .Books
                 .ToList();
 
