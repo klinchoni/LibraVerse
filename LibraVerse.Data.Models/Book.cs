@@ -1,21 +1,20 @@
-﻿namespace LibraVerse.Data.Models
+﻿using LibraVerse.Common;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using static LibraVerse.Common.EntityValidationConstants.Book;
+
+namespace LibraVerse.Data.Models
 {
     public class Book
     {
-        //Set a new Guid
-        public Book()
-        {
-            this.Id = Guid.NewGuid();
-        }
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+
+        [Comment("Title of the book")]
         public string Title { get; set; } = null!;
         public string Author { get; set; } = null!;
         public string Genre { get; set; } = null!;
         public DateTime ReleaseDate { get; set; }
-        public string Description { get; set; } = null!;
-        public string? ImageUrl { get; set; }
-        public decimal Price { get; set; }
-        public bool HasBought { get; set; }
+        public string Pages { get; set; } = null!;
 
     }
 }

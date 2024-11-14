@@ -19,6 +19,10 @@ namespace LibraVerse.Common
             //The date format
             public const string ReleaseDateFormat = "MM/yyyy";
 
+            //The minimum and maximum quantity of the Pages in the Book
+            public const int PagesMinLength = 100;
+            public const int PagesMaxLength = 1000;
+
             //The minimum and maximum length of the Description
             public const int DescriptionMinLength = 20; 
             public const int DescriptionMaxLength = 1000;
@@ -27,9 +31,9 @@ namespace LibraVerse.Common
             public const int ImageUrlMinLength = 8;
             public const int ImageUrlMaxLength = 2083;
 
-            //TO DO
-            //public const string PricelMin = 4.00;
-            //public const string PriceMax = 300.00;
+            
+           //public const string PriceMin = 4.00;
+           //public const string PriceMax = 300.00;
         }
     }
 }
