@@ -30,9 +30,9 @@ namespace LibraVerse.Data.Config
                 .HasMaxLength(GenreMaxLength);
 
             builder
-               .Property(b => b.Description)
+               .Property(b => b.Pages)
                .IsRequired()
-               .HasMaxLength(DescriptionMaxLength);
+               .HasMaxLength(PagesMaxLength);
 
             builder.HasData(this.SeedBooks()); // To seed the base 
         }
@@ -43,22 +43,22 @@ namespace LibraVerse.Data.Config
             {
                 new Book()
                 {
-                    Title = "Lord of the Clans",
-                    Author = "Christie Golden",
-                    Genre = "Fantasy",
+                    Title = "Лорд на клановете",
+                    Author = "Кристи Голдън",
+                    Genre = "Фентъзи",
                     ReleaseDate = new DateTime(2001, 10, 1),
-                    Description = "Lord of the Clans is a novel by Christie Golden telling the story of Warchief Thrall's rise to glory after the collapse of the Horde. It is an adaptation of the cancelled Blizzard game Warcraft Adventures: Lord of the Clans. It was republished in 2016 for the Blizzard Legends series."
+                    Pages = "278"
                 },
                 new Book()
                 {
-                    Title = "Bulgarcheta",
-                    Author = "Angel Karaliichev",
-                    Genre = "Fairy tales",
+                    Title = "Българчета",
+                    Author = "Ангел Каралийчев",
+                    Genre = "Разкази и приказки за деца",
                     ReleaseDate = new DateTime(1942),
-                    Description = "The collection from 1942, Bulgarcheta introduces us to the magical world of Karaliychev. Some of the stories included are set in magical and fairy-tale lands, while others are instructive tales from his time. The combination of the wisdom of folk proverbs and the author's artistic talent make the book a read that will not fail to be enjoyed by young readers."
+                    Pages = "192"
                 }
-
             };
+           
 
             return books;
         }

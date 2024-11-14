@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraVerse.Data.Migrations
 {
     [DbContext(typeof(LibraDbContext))]
-    [Migration("20241113064841_InitialDb")]
+    [Migration("20241114140443_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -36,15 +36,15 @@ namespace LibraVerse.Data.Migrations
                         .HasMaxLength(60)
                         .HasColumnType("nvarchar(60)");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Genre")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<string>("Pages")
                         .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
-
-                    b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
@@ -52,7 +52,8 @@ namespace LibraVerse.Data.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasComment("Title of the book");
 
                     b.HasKey("Id");
 
@@ -61,21 +62,21 @@ namespace LibraVerse.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("fa0735ec-5fce-47a4-bd3b-2bd353a8115c"),
-                            Author = "Christie Golden",
-                            Description = "Lord of the Clans is a novel by Christie Golden telling the story of Warchief Thrall's rise to glory after the collapse of the Horde. It is an adaptation of the cancelled Blizzard game Warcraft Adventures: Lord of the Clans. It was republished in 2016 for the Blizzard Legends series.",
-                            Genre = "Fantasy",
+                            Id = new Guid("4b268b42-dc5a-4e7e-96b7-aaa11cfa6e41"),
+                            Author = "Кристи Голдън",
+                            Genre = "Фентъзи",
+                            Pages = "278",
                             ReleaseDate = new DateTime(2001, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Lord of the Clans"
+                            Title = "Лорд на клановете"
                         },
                         new
                         {
-                            Id = new Guid("a0f8342a-ba3f-4fb2-a64b-a32e72446172"),
-                            Author = "Angel Karaliichev",
-                            Description = "The collection from 1942, Bulgarcheta introduces us to the magical world of Karaliychev. Some of the stories included are set in magical and fairy-tale lands, while others are instructive tales from his time. The combination of the wisdom of folk proverbs and the author's artistic talent make the book a read that will not fail to be enjoyed by young readers.",
-                            Genre = "Fairy tales",
+                            Id = new Guid("4a0ad254-4810-4233-9f3a-53aaa1a10277"),
+                            Author = "Ангел Каралийчев",
+                            Genre = "Разкази и приказки за деца",
+                            Pages = "192",
                             ReleaseDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified).AddTicks(1942),
-                            Title = "Bulgarcheta"
+                            Title = "Българчета"
                         });
                 });
 #pragma warning restore 612, 618
