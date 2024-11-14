@@ -22,5 +22,11 @@ namespace LibraVerse.Controllers
 
             return this.View(allBooks); //allBooks is set as object in the view
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return this.View();
+        }
     }
 }
