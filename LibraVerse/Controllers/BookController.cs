@@ -3,7 +3,7 @@ using LibraVerse.Data;
 using LibraVerse.Data.Models;
 using LibraVerse.Web.ViewModels.Book;
 using Microsoft.AspNetCore.Mvc;
-
+using static LibraVerse.Common.EntityValidationConstants.Book;
 namespace LibraVerse.Controllers
 {
     public class BookController : Controller
@@ -42,11 +42,11 @@ namespace LibraVerse.Controllers
             }
 
             bool isReleaseDateValid = DateTime
-                .TryParseExact(inputModel.ReleaseDate, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime releaseDate);
+                .TryParseExact(inputModel.ReleaseDate, ReleaseDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime releaseDate);
 
             if (!isReleaseDateValid)
             {
-                this.ModelState.AddModelError(nameof(inputModel.ReleaseDate), "The ReleaseDate must be in the following format: dd/MM/yyyy");
+                this.ModelState.AddModelError(nameof(inputModel.ReleaseDate), String.Format("The ReleaseDate must be in the following format:{0}", ReleaseDateFormat));
                 return this.View(inputModel);
             }
 

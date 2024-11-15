@@ -5,34 +5,34 @@
 
 <form asp-action="Create" method="post">
     <div>
-        <label for="Title">Book Name</label>
+        <label asp-for="Title">Book Name</label>
         <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title"></span>
+        <span asp-validation-for="Title" class="text-danger"></span>
     </div>
     <div>
-        <label for="Genre">Genre</label>
+        <label asp-for="Genre">Genre</label>
         <input asp-for="Genre" class="form-control" />
-        <span asp-validation-for="Genre"></span>
+        <span asp-validation-for="Genre" class="text-danger"></span>
     </div>
     <div>
-        <label for="ReleaseDate">Release Date</label>
+        <label asp-for="ReleaseDate">Release Date</label>
         <input asp-for="ReleaseDate" type="month" class="form-control" />
-        <span asp-validation-for="ReleaseDate"></span>
+        <span asp-validation-for="ReleaseDate" class="text-danger"></span>
     </div>
     <div>
-        <label for="Pages">Pages</label>
+        <label asp-for="Pages">Pages</label>
         <input asp-for="Pages" class="form-control" />
-        <span asp-validation-for="Pages"></span>
+        <span asp-validation-for="Pages" class="text-danger"></span>
     </div>
     <div>
-        <label for="Author">Author</label>
+        <label asp-for="Author">Author</label>
         <input asp-for="Author" class="form-control" />
-        <span asp-validation-for="Author"></span>
+        <span asp-validation-for="Author"  class="text-danger"></span>
     </div>
     <div>
-        <label for="Description">Description</label>
+        <label asp-for="Description">Description</label>
         <textarea asp-for="Description" class="form-control"></textarea>
-        <span asp-validation-for="Description"></span>
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary mt-2">Create Book</button>
 </form>
