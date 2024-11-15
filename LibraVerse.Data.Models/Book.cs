@@ -15,6 +15,7 @@ namespace LibraVerse.Data.Models
         public string Genre { get; set; } = null!;
         public DateTime ReleaseDate { get; set; }
         public string Pages { get; set; } = null!;
+        public string Description { get; set; } = null!;
 
     }
 }
