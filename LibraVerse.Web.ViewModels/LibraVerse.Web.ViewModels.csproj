@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LibraVerse.Common\LibraVerse.Common.csproj" />
+  </ItemGroup>
+
 </Project>

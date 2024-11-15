@@ -16,12 +16,12 @@ namespace LibraVerse.Common
             public const int GenreMinLength = 5; 
             public const int GenreMaxLength = 30;
 
+            //The minimum and maximum quantity (numbers) of the Book's pages.
+            public const int PagesMinNumber = 5;
+            public const int PagesMaxNumber = 21000;
+
             //The date format
             public const string ReleaseDateFormat = "MM/yyyy";
-
-            //The minimum and maximum quantity of the Pages in the Book
-            public const int PagesMinLength = 100;
-            public const int PagesMaxLength = 1000;
 
             //The minimum and maximum length of the Description
             public const int DescriptionMinLength = 20; 

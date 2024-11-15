@@ -1,5 +1,5 @@
-﻿@using LibraVerse.Data.Models;
-@model Book
+﻿@using LibraVerse.Web.ViewModels.Book
+@model AddBookInputModel
 
 <h2>Add a New Book</h2>
 
@@ -7,26 +7,32 @@
     <div>
         <label for="Title">Book Name</label>
         <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title"></span>
     </div>
     <div>
         <label for="Genre">Genre</label>
         <input asp-for="Genre" class="form-control" />
+        <span asp-validation-for="Genre"></span>
     </div>
     <div>
         <label for="ReleaseDate">Release Date</label>
         <input asp-for="ReleaseDate" type="month" class="form-control" />
+        <span asp-validation-for="ReleaseDate"></span>
     </div>
     <div>
         <label for="Pages">Pages</label>
         <input asp-for="Pages" class="form-control" />
+        <span asp-validation-for="Pages"></span>
     </div>
     <div>
         <label for="Author">Author</label>
         <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author"></span>
     </div>
     <div>
         <label for="Description">Description</label>
         <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description"></span>
     </div>
     <button type="submit" class="btn btn-primary mt-2">Create Book</button>
 </form>
