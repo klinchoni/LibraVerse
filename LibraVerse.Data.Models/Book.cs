@@ -14,7 +14,7 @@ namespace LibraVerse.Data.Models
         public string Author { get; set; } = null!;
         public string Genre { get; set; } = null!;
         public DateTime ReleaseDate { get; set; }
-        public string Pages { get; set; } = null!;
+        public int Pages { get; set; }
         public string Description { get; set; } = null!;
 
     }
