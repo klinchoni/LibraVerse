@@ -1,0 +1,12 @@
+﻿@using LibraVerse.Data.Models
+@model Book
+
+<h2>@Model.Title</h2>
+
+<p><strong>Genre:</strong> @Model.Genre</p>
+<p><strong>Release Date:</strong> @Model.ReleaseDate.ToString("MMMM yyyy")</p>
+<p><strong>Pages:</strong> @Model.Pages </p>
+<p><strong>Author:</strong> @Model.Author</p>
+<p><strong>Description:</strong> @Model.Description</p>
+
+<a asp-action="Index" class="btn btn-primary">Back to All Books</a>
