@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using LibraVerse.Data.Models;
+@model Book
+
+<h2>Add a New Book</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Title">Book Name</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div>
+        <label for="Genre">Genre</label>
+        <input asp-for="Genre" class="form-control" />
+    </div>
+    <div>
+        <label for="ReleaseDate">Release Date</label>
+        <input asp-for="ReleaseDate" type="month" class="form-control" />
+    </div>
+    <div>
+        <label for="Pages">Pages</label>
+        <input asp-for="Pages" class="form-control" />
+    </div>
+    <div>
+        <label for="Author">Author</label>
+        <input asp-for="Author" class="form-control" />
+    </div>
+    <div>
+        <label for="Description">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Create Book</button>
+</form>
+
+<a asp-action="Index">Back to Books List</a>
+
+
