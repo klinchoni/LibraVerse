@@ -1,10 +1,9 @@
-﻿using LibraVerse.Data.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Net;
+using LibraVerse.Data.Models.Books;
 using static LibraVerse.Common.EntityValidationConstants.Book;
 
-namespace LibraVerse.Data.Config
+namespace LibraVerse.Data.Seeding.Config
 {
     public class BookConfiguration : IEntityTypeConfiguration<Book>
     {
@@ -12,17 +11,17 @@ namespace LibraVerse.Data.Config
         {
             //Fluent API
 
-           builder.HasKey(b => b.Id);
+            builder.HasKey(b => b.Id);
 
-           builder
-                .Property(b => b.Title)
-                .IsRequired()
-                .HasMaxLength(TitleMaxLength);
+            builder
+                 .Property(b => b.Title)
+                 .IsRequired()
+                 .HasMaxLength(TitleMaxLength);
 
             builder
                .Property(b => b.Author)
                .IsRequired()
-               .HasMaxLength(NameMaxLength );
+               .HasMaxLength(NameMaxLength);
 
             builder
                 .Property(b => b.Genre)
@@ -39,7 +38,7 @@ namespace LibraVerse.Data.Config
                 .IsRequired()
                 .HasMaxLength(DescriptionMaxLength);
 
-            builder.HasData(this.SeedBooks()); // To seed the base 
+            builder.HasData(SeedBooks()); // To seed the base 
         }
 
         private List<Book> SeedBooks()
@@ -65,7 +64,7 @@ namespace LibraVerse.Data.Config
                     Description = "Сборникът от 1942 г. „Българчета“ ни въвежда в магическия свят на Каралийчев. Част от поместените истории се развиват във вълшебни и приказни страни, докато други са поучителни разкази от неговото съвремие.\r\n\r\nСъчетанието от мъдростта на народните притчи и художествения талант на автора правят книгата четиво, което няма как да не бъде харесано от малките читатели.\r\n\r\nЗащото без значение в каква епоха живеем, децата си остават деца, а основните морални ценности са непреходни."
                 }
             };
-           
+
 
             return books;
         }

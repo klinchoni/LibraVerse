@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using LibraVerse.Data;
-using LibraVerse.Data.Models;
+using LibraVerse.Data.Models.Books;
 using LibraVerse.Web.ViewModels.Book;
 using Microsoft.AspNetCore.Mvc;
 using static LibraVerse.Common.EntityValidationConstants.Book;

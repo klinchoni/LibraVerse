@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using LibraVerse.Data.Models;
-using Microsoft.EntityFrameworkCore;
-
-namespace LibraVerse.Data
+﻿namespace LibraVerse.Data
 {
+    using System.Reflection;
+    using LibraVerse.Data.Models.Books;
+    using Microsoft.EntityFrameworkCore;
     public class LibraDbContext : DbContext
     {
         //Empty ctor to use it for tests
