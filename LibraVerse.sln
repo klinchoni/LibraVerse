@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse", "LibraVerse\LibraVerse.csproj", "{DF824128-8A0E-4194-AD67-797008BB2395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse", "LibraVerse\LibraVerse.csproj", "{DF824128-8A0E-4194-AD67-797008BB2395}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Web.ViewModels", "LibraVerse.Web.ViewModels\LibraVerse.Web.ViewModels.csproj", "{E56A056B-9364-49F9-838C-56DD04C04630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Web.ViewModels", "LibraVerse.Web.ViewModels\LibraVerse.Web.ViewModels.csproj", "{E56A056B-9364-49F9-838C-56DD04C04630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Common", "LibraVerse.Common\LibraVerse.Common.csproj", "{7607D847-FA30-474B-B97B-A586DB8783F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Common", "LibraVerse.Common\LibraVerse.Common.csproj", "{7607D847-FA30-474B-B97B-A586DB8783F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Data.Models", "LibraVerse.Data.Models\LibraVerse.Data.Models.csproj", "{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Data.Models", "LibraVerse.Data.Models\LibraVerse.Data.Models.csproj", "{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraVerse.Web", "LibraVerse.Web", "{C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraVerse.Data", "LibraVerse.Data", "{DD9CE143-4078-4919-98EA-A97AE3F57AD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Data", "LibraVerse.Data\LibraVerse.Data.csproj", "{19652341-ACB6-4E0F-B222-F7ADC0FA2E35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Data", "LibraVerse.Data\LibraVerse.Data.csproj", "{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Core", "LibraVerse.Core\LibraVerse.Core.csproj", "{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +41,14 @@ Global
 		{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19652341-ACB6-4E0F-B222-F7ADC0FA2E35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19652341-ACB6-4E0F-B222-F7ADC0FA2E35}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19652341-ACB6-4E0F-B222-F7ADC0FA2E35}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19652341-ACB6-4E0F-B222-F7ADC0FA2E35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,7 +57,7 @@ Global
 		{DF824128-8A0E-4194-AD67-797008BB2395} = {C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}
 		{E56A056B-9364-49F9-838C-56DD04C04630} = {C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}
 		{868ECE40-F05E-47D1-A5FC-47E43AA5DC77} = {DD9CE143-4078-4919-98EA-A97AE3F57AD9}
-		{19652341-ACB6-4E0F-B222-F7ADC0FA2E35} = {DD9CE143-4078-4919-98EA-A97AE3F57AD9}
+		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F} = {DD9CE143-4078-4919-98EA-A97AE3F57AD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA1713EE-3E33-4662-8930-64D1CE9CF857}

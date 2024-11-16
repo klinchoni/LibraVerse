@@ -1,22 +1,40 @@
-
-namespace LibraVerse.Controllers
+﻿namespace LibraVerse.Controllers
 {
-    using System.Diagnostics;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using LibraVerse.Web.ViewModels;
-    public class HomeController : Controller
+    using LibraVerse.Core.Contracts;
+
+    public class HomeController : BaseController
     {
+        private readonly ILogger<HomeController> logger;
+        private readonly IBookStoreService bookStoreService;
 
-
-        public HomeController()
+        public HomeController(ILogger<HomeController> logger, IBookStoreService bookStoreService)
         {
-
+            this.logger = logger;
+            this.bookStoreService = bookStoreService;
         }
 
-        public IActionResult Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
         {
-            ViewData["Title"] = "Home Page";
-            ViewData["Message"] = "Welcome to the LibraVerse Web App!";
+            var bookStoreModel = await bookStoreService.LastTenBookStoresAsync();
+            return View(bookStoreModel);
+        }
+
+        [AllowAnonymous]
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error(int statusCode)
+        {
+            if (statusCode == 400)
+            {
+                return View("Error400");
+            }
+            else if (statusCode == 401)
+            {
+                return View("Error401");
+            }
+
             return View();
         }
     }

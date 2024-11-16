@@ -1,94 +1,524 @@
-﻿using System.Globalization;
-using LibraVerse.Data;
-using LibraVerse.Data.Models.Books;
-using LibraVerse.Web.ViewModels.Book;
-using Microsoft.AspNetCore.Mvc;
-using static LibraVerse.Common.EntityValidationConstants.Book;
-namespace LibraVerse.Controllers
+﻿namespace LibraVerse.Controllers
 {
-    public class BookController : Controller
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using LibraVerse.Core.Contracts;
+    using LibraVerse.Core.Extensions;
+    using LibraVerse.Core.Models.QueryModels.Book;
+    using LibraVerse.Core.Models.QueryModels.BookStore;
+    using LibraVerse.Core.Models.ViewModels.Book;
+    using LibraVerse.Core.Services;
+    using System.Security.Claims;
+
+    public class BookController : BaseController
     {
-        private readonly LibraDbContext dbContext;
+        private readonly IBookService bookService;
+        private readonly IPublisherService publisherService;
 
-        public BookController(LibraDbContext dbContext)
+        public BookController(IBookService bookService, IPublisherService publisherService)
         {
-            this.dbContext = dbContext;
+            this.bookService = bookService;
+            this.publisherService = publisherService;
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> All([FromQuery]AllBooksQueryModel model)
+        {
+            var allBooks = await bookService.AllAsync(
+                model.Genre,
+                model.CoverType,
+                model.SearchTerm,
+                model.Sorting,
+                model.CurrentPage,
+                model.BooksPerPage);
+
+            model.TotalBooksCount = allBooks.TotalBooksCount;
+            model.Books = allBooks.Books;
+            model.Genres = await bookService.AllGenresNamesAsync();
+            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
+
+            return View(model);
         }
 
         [HttpGet]
-        public IActionResult Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> AllBookstoresWithBook(int id, [FromQuery] AllBookStoresQueryModel model)
         {
-            IEnumerable<Book> allBooks = dbContext
-                .Books
-                .ToList();
+            var allEvents = await bookService.AllBookstoresWithBook(
+                id,
+                model.SearchTerm,
+                model.Status,
+                model.CurrentPage,
+                model.BookStoresPerPage);
 
-            return this.View(allBooks); //allBooks is set as object in the view
+            model.TotalBookStoresCount = allEvents.TotalBookStoresCount;
+            model.BookStores = allEvents.BookStores;
+
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> Details(int id, string information)
+        {
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+
+            var currentBook = await bookService.DetailsAsync(id);
+
+            if (information != currentBook.GetInformation())
+            {
+                return BadRequest();
+            }
+
+            return View(currentBook);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Mine(string id, [FromQuery] AllBooksQueryModel model)
         {
-            return this.View();
+            var userId = User.Id();
+
+            if (userId != id)
+            {
+                return Unauthorized();
+            }
+
+            var bookCollections = new AllBookCollectionsModel()
+            {
+                booksUserWantsToRead = await bookService.AllWantToReadBooksIdsByUserIdAsync(
+                userId, model.Genre, model.CoverType, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage),
+
+                booksUserCurrentlyReading = await bookService.AllCurrentlyReadingBooksIdsByUserIdAsync(
+                    userId, model.Genre, model.CoverType, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage),
+
+                booksUserRead = await bookService.AllReadBooksIdsByUserIdAsync(
+                    userId, model.Genre, model.CoverType, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage)
+            };
+
+            return View(bookCollections);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DetailsWantToRead(int id)
+        {
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+
+            var currentBook = await bookService.DetailsAsync(id);
+            return View(currentBook);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DetailsCurrentlyReading(int id)
+        {
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+
+            var currentBook = await bookService.DetailsAsync(id);
+            return View(currentBook);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DetailsRead(int id)
+        {
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+
+            var currentBook = await bookService.DetailsAsync(id);
+            return View(currentBook);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> WantToRead([FromQuery] AllBooksQueryModel model)
+        {
+            var userId = User.Id();
+
+            var allBooks = await bookService.AllWantToReadBooksIdsByUserIdAsync(
+                userId,
+                model.Genre,
+                model.CoverType,
+                model.SearchTerm,
+                model.Sorting,
+                model.CurrentPage,
+                model.BooksPerPage);
+
+            model.TotalBooksCount = allBooks.TotalBooksCount;
+            model.Books = allBooks.Books;
+            model.Genres = await bookService.AllGenresNamesAsync();
+            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CurrentlyReading([FromQuery] AllBooksQueryModel model)
+        {
+            var userId = User.Id();
+
+            var allBooks = await bookService.AllCurrentlyReadingBooksIdsByUserIdAsync(
+                userId,
+                model.Genre,
+                model.CoverType,
+                model.SearchTerm,
+                model.Sorting,
+                model.CurrentPage,
+                model.BooksPerPage);
+
+            model.TotalBooksCount = allBooks.TotalBooksCount;
+            model.Books = allBooks.Books;
+            model.Genres = await bookService.AllGenresNamesAsync();
+            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Read([FromQuery] AllBooksQueryModel model)
+        {
+            var userId = User.Id();
+
+            var allBooks = await bookService.AllReadBooksIdsByUserIdAsync(
+                userId,
+                model.Genre,
+                model.CoverType,
+                model.SearchTerm,
+                model.Sorting,
+                model.CurrentPage,
+                model.BooksPerPage);
+
+            model.TotalBooksCount = allBooks.TotalBooksCount;
+            model.Books = allBooks.Books;
+            model.Genres = await bookService.AllGenresNamesAsync();
+            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddWantToRead(int id)
+        {
+            string userId = User.Id();
+
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+            if (await bookService.BookIsInAnotherCollectionAsync(id, userId))
+            {
+                await bookService.RemoveBookFromAllCollectionsAsync(id, userId);
+            }
+
+
+            await bookService.AddWantToReadBookAsync(id, userId);
+            return RedirectToAction(nameof(Mine), new { id = userId });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddCurrentlyReading(int id)
+        {
+            string userId = User.Id();
+
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+            if (await bookService.BookIsInAnotherCollectionAsync(id, userId))
+            {
+                await bookService.RemoveBookFromAllCollectionsAsync(id, userId);
+            }
+
+            await bookService.AddCurrentlyReadingBookAsync(id, userId);
+            return RedirectToAction(nameof(Mine), new { id = userId });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddRead(int id)
+        {
+            string userId = User.Id();
+
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+            if (await bookService.BookIsInAnotherCollectionAsync(id, userId))
+            {
+                await bookService.RemoveBookFromAllCollectionsAsync(id, userId);
+            }
+
+            await bookService.AddReadBookAsync(id, userId);
+
+            if (await bookService.FindBookReviewAsync(User.Id(), id) != null)
+            {
+                return RedirectToAction(nameof(Mine), new { id = userId });
+            }
+
+            return RedirectToAction(nameof(BookReviewQuestion), new { id });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> BookReviewQuestion(int id)
+        {
+            if (!await bookService.BookExistsAsync(id))
+            {
+                return BadRequest();
+            }
+
+            var bookReviewQuestion = await bookService.BookReviewQuestionAsync(id);
+
+            return View(bookReviewQuestion);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RemoveWantToRead(int id)
+        {
+            string userId = User.Id();
+
+            if (!await bookService.BookExistsAsync(id) || !await bookService.BookIsWantToReadAsync(id, userId))
+            {
+                return BadRequest();
+            }
+
+            await bookService.RemoveWantToReadBookAsync(id, userId);
+            return RedirectToAction(nameof(WantToRead));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RemoveCurrentlyReading(int id)
+        {
+            string userId = User.Id();
+
+            if (!await bookService.BookExistsAsync(id) || !await bookService.BookIsCurrentlyReadingAsync(id, userId))
+            {
+                return BadRequest();
+            }
+
+            await bookService.RemoveCurrentlyReadingBookAsync(id, userId);
+            return RedirectToAction(nameof(CurrentlyReading));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RemoveRead(int id)
+        {
+            string userId = User.Id();
+
+            if (!await bookService.BookExistsAsync(id) || !await bookService.BookIsReadAsync(id, userId))
+            {
+                return BadRequest();
+            }
+
+            await bookService.RemoveReadBookAsync(id, userId);
+            return RedirectToAction(nameof(Read));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteBookReview(int id)
+        {
+            var bookReview = await bookService.FindBookReviewByIdAsync(id);
+
+            if (bookReview == null)
+            {
+                return BadRequest();
+            }
+            if (bookReview.UserId != User.Id() && !User.IsAdmin())
+            {
+                return Unauthorized();
+            }
+
+            var searchedBookReview = await bookService.DeleteBookReviewAsync(id);
+
+            return View(searchedBookReview);
         }
 
         [HttpPost]
-        public IActionResult Create(AddBookInputModel inputModel)
+        public async Task<IActionResult> DeleteBookReviewConfirmed(int reviewId)
         {
-            //Checks if the validation with data annotations was successful
-            if (!this.ModelState.IsValid)
+            var bookReview = await bookService.FindBookReviewByIdAsync(reviewId);
+
+            if (bookReview == null)
             {
-                //Render the same form with user entered values + model errors
-                return this.View(inputModel);
+                return BadRequest();
+            }
+            if (bookReview.UserId != User.Id() && !User.IsAdmin())
+            {
+                return Unauthorized();
             }
 
-            bool isReleaseDateValid = DateTime
-                .TryParseExact(inputModel.ReleaseDate, ReleaseDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime releaseDate);
+            var id = await bookService.DeleteBookReviewConfirmedAsync(reviewId);
 
-            if (!isReleaseDateValid)
-            {
-                this.ModelState.AddModelError(nameof(inputModel.ReleaseDate), String.Format("The ReleaseDate must be in the following format:{0}", ReleaseDateFormat));
-                return this.View(inputModel);
-            }
-
-            Book book = new Book()
-            {
-                Title = inputModel.Title,
-                Genre = inputModel.Genre,
-                ReleaseDate = releaseDate,
-                Author = inputModel.Author,
-                Pages = inputModel.Pages,
-                Description = inputModel.Description,
-            };
-
-            this.dbContext.Books.Add(book);
-            this.dbContext.SaveChanges();
-
-            return this.RedirectToAction("Index");
+            return RedirectToAction(nameof(AllReviews), new { id });
         }
 
         [HttpGet]
-        public IActionResult Details(string id)
+        public async Task<IActionResult> AddReview(int id)
         {
-            bool isIdValid = Guid.TryParse(id, out Guid guidId);
+            string userId = User.Id();
 
-            //Invalid format for the Id
-            if (!isIdValid)
+            var bookReviewForm = new BookReviewAddViewModel()
             {
-                return this.RedirectToAction("Index");
+                BookId = id,
+                UserId = userId
+            };
+
+            return View(bookReviewForm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddReview(BookReviewAddViewModel bookReviewForm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(bookReviewForm);
             }
 
-            Book? book = this.dbContext
-                .Books
-                .FirstOrDefault(b=>b.Id==guidId);
+            int newBookReviewId = await bookService.AddBookReviewAsync(bookReviewForm, bookReviewForm.UserId, bookReviewForm.BookId);
 
-            //Do not exsit this Guid
-            if (book == null)
-            { 
-                return this.RedirectToAction("Index");
+            int id = bookReviewForm.BookId;
+            return RedirectToAction(nameof(AllReviews), new { id });
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> AllReviews(int id, [FromQuery] AllBookReviewsQueryModel model)
+        {
+            var book = bookService.FindBookByIdAsync(id).Result;
+            var currentBookInfo = await bookService.DetailsAsync(id);
+
+            var allBooks = await bookService.AllBookReviewsAsync(
+                id,
+                book.Title,
+                model.SearchTerm,
+                model.Sorting,
+                model.CurrentPage,
+                model.ReviewsPerPage);
+
+            model.TotalBookReviewsCount = allBooks.TotalReviewsCount;
+            model.BookReviews = allBooks.BookReviews;
+            model.BookId = id;
+            model.BookTitle = book.Title;
+            model.BookInfo = currentBookInfo.GetInformation();
+
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public async Task<IActionResult> BookReviewDetails(int id)
+        {
+            if (await bookService.FindBookReviewByIdAsync(id) == null)
+            {
+                return BadRequest();
             }
 
-            //Return data for this book if everything is correct
-            return this.View(book);
+            var currentBookReview = await bookService.BookReviewDetailsAsync(id);
+            return View(currentBookReview);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditBookReview(int id)
+        {
+            var bookReview = await bookService.FindBookReviewByIdAsync(id);
+
+            if (bookReview == null)
+            {
+                return BadRequest();
+            }
+            if (User.Id() != bookReview.UserId)
+            {
+                return Unauthorized();
+            }
+
+            var bookReviewForm = await bookService.EditBookReviewGetAsync(id);
+            return View(bookReviewForm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditBookReview(BookReviewEditViewModel bookReviewForm)
+        {
+            if (bookReviewForm == null)
+            {
+                return BadRequest();
+            }
+            if (User.Id() != bookReviewForm.UserId)
+            {
+                return Unauthorized();
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(bookReviewForm);
+            }
+
+            var id = bookReviewForm.BookId;
+            await bookService.EditBookReviewPostAsync(bookReviewForm);
+            return RedirectToAction(nameof(AllReviews), new { id });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ChangePage(int id)
+        {
+            string userId = User.Id();
+            var bookUserIsCurrentlyReading = await bookService.FindBookCurrentlyReadingAsync(id, userId);
+
+            if (bookUserIsCurrentlyReading == null)
+            {
+                return BadRequest();
+            }
+            if (User.Id() != bookUserIsCurrentlyReading.UserId)
+            {
+                return Unauthorized();
+            }
+
+            var changePageForm = await bookService.ChangePageGetAsync(id, userId);
+            return View(changePageForm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePage(ChangePageViewModel changePageForm)
+        {
+            var currentBook = bookService.FindBookByIdAsync(changePageForm.BookId).Result;
+
+            if (changePageForm == null)
+            {
+                return BadRequest();
+            }
+            if (User.Id() != changePageForm.UserId)
+            {
+                return Unauthorized();
+            }
+            if (changePageForm.CurrentPage > currentBook.Pages)
+            {
+                ModelState.AddModelError("CurrentPage", "You can't be on an unexisting page!");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View(changePageForm);
+            }
+
+            int id = currentBook.Id;
+
+            if (changePageForm.CurrentPage == currentBook.Pages)
+            {
+                await RemoveCurrentlyReading(id);
+                await AddRead(id);
+
+                if (await bookService.FindBookReviewAsync(User.Id(), id) == null)
+                {
+                    return RedirectToAction(nameof(BookReviewQuestion), new { id });
+                }
+                return RedirectToAction(nameof(Mine), new { id = User.Id() });
+            }
+
+            await bookService.ChangePagePostAsync(changePageForm);
+            return RedirectToAction(nameof(DetailsCurrentlyReading), new { id });
         }
     }
 }
