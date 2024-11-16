@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using static LibraVerse.Common.EntityValidationConstants.ArticleComment;
+using LibraVerse.Data.Models.Roles;
 
 namespace LibraVerse.Data.Models.Articles
 {
@@ -34,8 +35,8 @@ namespace LibraVerse.Data.Models.Articles
         [Comment("The current User's Identifier")]
         public string UserId { get; set; } = null!;
 
-       // [ForeignKey(nameof(UserId))]
-       // [Comment("The current User")]
-        //public ApplicationUser User { get; set; } = null!;
+        [ForeignKey(nameof(UserId))]
+        [Comment("The current User")]
+        public ApplicationUser User { get; set; } = null!;
     }
 }
