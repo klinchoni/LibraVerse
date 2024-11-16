@@ -22,7 +22,7 @@
         public string ReleaseDate { get; set; }
 
         [Required(ErrorMessage = PagesRequiredMessage)]
-        [Range(PagesMinNumber,PagesMaxNumber)]
+        [Range(BookPageMinValue,BookPageMaxValue)]
         public int Pages {  get; set; }
 
         [Required(ErrorMessage = AuthorRequiredMessage)]
@@ -30,7 +30,7 @@
         [MaxLength(NameMaxLength)]
         public string Author { get; set; } = null!;
 
-        [Required]
+        [Required (ErrorMessage = DescriptionRequiredMessage)]
         [MinLength(DescriptionMinLength)]
         [MaxLength(NameMaxLength)]
         public string Description { get; set; } = null!;
