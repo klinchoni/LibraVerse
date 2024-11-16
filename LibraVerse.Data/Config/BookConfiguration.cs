@@ -32,7 +32,7 @@ namespace LibraVerse.Data.Config
             builder
                .Property(b => b.Pages)
                .IsRequired()
-               .HasMaxLength(PagesMaxNumber);
+               .HasMaxLength((int)BookPageMaxValue);
 
             builder
                 .Property(b => b.Description)
