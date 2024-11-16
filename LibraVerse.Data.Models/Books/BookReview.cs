@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using static LibraVerse.Common.EntityValidationConstants.BookReview;
+using LibraVerse.Data.Models.Roles;
 
 namespace LibraVerse.Data.Models.Books
 {
@@ -36,8 +37,8 @@ namespace LibraVerse.Data.Models.Books
         [Comment("The User's Identifier")]
         public string UserId { get; set; } = null!;
 
-       // [ForeignKey(nameof(UserId))]
-      //  [Comment("The User")]
-       // public ApplicationUser User { get; set; } = null!;
+        [ForeignKey(nameof(UserId))]
+        [Comment("The User")]
+         public ApplicationUser User { get; set; } = null!;
     }
 }
