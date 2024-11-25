@@ -1,37 +1,35 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-using static LibraVerse.Common.EntityValidationConstants.Article;
-
-
-namespace LibraVerse.Data.Models.Articles
+﻿namespace LibraVerse.Data.Models.Articles
 {
+    using Microsoft.EntityFrameworkCore;
+    using System.ComponentModel.DataAnnotations;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Article;
     public class Article
     {
         [Key]
-        [Comment("The current Article's Identifier")]
-        public Guid Id { get; set; }
+        [Comment("The Identifier of Article")]
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(ArticleTitleMaxLength)]
-        [Comment("The current Article's Title")]
+        [Comment("The Article's Title")]
         public string Title { get; set; } = null!;
 
         [Required]
         [MaxLength(ArticleContentMaxLength)]
-        [Comment("The current Article's Content")]
+        [Comment("The Article's Content")]
         public string Content { get; set; } = null!;
 
         [Required]
-        [Comment("The date on which the current Article was posted")]
+        [Comment("The posted date on the Article")]
         public DateTime DatePublished { get; set; }
 
         [Required]
         [MaxLength(ArticleImageUrlMaxLength)]
-        [Comment("The current Article's Image Url")]
+        [Comment("The Article's Image Url")]
         public string ImageUrl { get; set; } = null!;
 
         [Required]
-        [Comment("The current Article's Views Count")]
+        [Comment("The Article's Views Count")]
         public int ViewsCount { get; set; }
 
         public ICollection<ArticleComment> Comments { get; set; } = new HashSet<ArticleComment>();
