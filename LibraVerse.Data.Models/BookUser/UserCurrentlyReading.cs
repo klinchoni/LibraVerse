@@ -1,29 +1,28 @@
 ﻿namespace LibraVerse.Data.Models.BookUser
 {
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
-    using LibraVerse.Data.Models.Books;
-    using LibraVerse.Data.Models.Roles;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using LibraVerse.Data.Models.Books;
+    using LibraVerse.Data.Models.Roles;
 
     public class UserCurrentlyReading
     {
         [Required]
-        [Comment("The current Book's Identifier")]
-        public Guid BookId { get; set; }
+        [Comment("The Identifier of the Book")]
+        public int BookId { get; set; }
 
         [ForeignKey(nameof(BookId))]
-        [Comment("The current Book")]
+        [Comment("The Book")]
         public Book Book { get; set; } = null!;
 
 
         [Required]
-        [Comment("The current User's Identifier")]
+        [Comment("The Identifier of the User")]
         public string UserId { get; set; } = null!;
 
         [ForeignKey(nameof(UserId))]
-        [Comment("The current User")]
+        [Comment("The User")]
         public ApplicationUser User { get; set; } = null!;
 
         [Required]
