@@ -1,40 +1,39 @@
-﻿using LibraVerse.Data.Models.Mappings;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-using static LibraVerse.Common.EntityValidationConstants.BookStore;
-
-namespace LibraVerse.Data.Models.BookStores
+﻿namespace LibraVerse.Data.Models.BookStores
 {
+    using Microsoft.EntityFrameworkCore;
+    using System.ComponentModel.DataAnnotations;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.BookStore;
+    using LibraVerse.Data.Models.Mappings;
     public class BookStore
     {
-        [Comment("The BookStore's Identifier")]
-        public Guid Id { get; set; }
+        [Comment("The Identifier of the BookStore")]
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(BookStoreNameMaxLength)]
-        [Comment("The BookStore's Name")]
+        [Comment("The Name of the BookStore")]
         public string Name { get; set; } = null!;
 
         [Required]
         [MaxLength(BookStoreLocationMaxLength)]
-        [Comment("The BookStore's Location")]
+        [Comment("The Location of the BookStore")]
         public string Location { get; set; } = null!;
 
         [Required]
-        [Comment("The BookStore's Mobile Contact")]
+        [Comment("The Contact of the BookStore")]
         public string Contact { get; set; } = null!;
 
         [Required]
-        [Comment("The BookStore's Opening Time")]
+        [Comment("The Opening Time of the BookStore")]
         public DateTime OpeningTime { get; set; }
 
         [Required]
-        [Comment("The BookStore's Closing Time")]
+        [Comment("The Closing Time of the BookStore")]
         public DateTime ClosingTime { get; set; }
 
         [Required]
         [MaxLength(BookStoreImageUrlMaxLength)]
-        [Comment("The BookStore's Image Url")]
+        [Comment("The Image Url of the BookStore")]
         public string ImageUrl { get; set; } = null!;
 
         public ICollection<BookBookStore> BooksBookStores { get; set; } = new HashSet<BookBookStore>();
