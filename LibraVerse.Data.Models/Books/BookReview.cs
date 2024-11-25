@@ -1,23 +1,22 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using static LibraVerse.Common.EntityValidationConstants.BookReview;
-using LibraVerse.Data.Models.Roles;
-
-namespace LibraVerse.Data.Models.Books
+﻿namespace LibraVerse.Data.Models.Books
 {
+    using Microsoft.EntityFrameworkCore;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.ComponentModel.DataAnnotations;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.BookReview;
+    using LibraVerse.Data.Models.Roles;
     public class BookReview
     {
         [Key]
-        [Comment("The Book Review's Identifier")]
-        public Guid Id { get; set; }
+        [Comment("The Identifier of the Book Review")]
+        public int Id { get; set; }
 
         [MaxLength(BookReviewTitleMaxLength)]
-        [Comment("The Book Review's Title")]
+        [Comment("The Title of the Book Review")]
         public string Title { get; set; } = null!;
 
         [MaxLength(BookReviewDescriptionMaxLength)]
-        [Comment("The Book Review's Description")]
+        [Comment("The Description of the Book Review")]
         public string Description { get; set; } = null!;
 
         [Required]
@@ -26,7 +25,7 @@ namespace LibraVerse.Data.Models.Books
 
 
         [Required]
-        [Comment("The Book's Identifier")]
+        [Comment("The Idetifier of the Book")]
         public int BookId { get; set; }
 
         [ForeignKey(nameof(BookId))]
@@ -34,7 +33,7 @@ namespace LibraVerse.Data.Models.Books
         public Book Book { get; set; } = null!;
 
         [Required]
-        [Comment("The User's Identifier")]
+        [Comment("The Identifier of the Book")]
         public string UserId { get; set; } = null!;
 
         [ForeignKey(nameof(UserId))]
