@@ -1,17 +1,15 @@
-﻿using LibraVerse.Common;
-using LibraVerse.Data.Models.Mappings;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using static LibraVerse.Common.EntityValidationConstants.Book;
-
-namespace LibraVerse.Data.Models.Books
+﻿namespace LibraVerse.Data.Models.Books
 {
+    using Microsoft.EntityFrameworkCore;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Book;
+    using LibraVerse.Data.Models.Mappings;
     public class Book
     {
         [Key]
-        [Comment("The current Book's Identifier")]
-        public Guid Id { get; set; }
+        [Comment("The Identifier of the Book")]
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(TitleMaxLength)]
@@ -24,34 +22,34 @@ namespace LibraVerse.Data.Models.Books
         public string Author { get; set; } = null!;
 
         [Required]
-        [Comment("The current Book's Genre's Identifier")]
+        [Comment("The Identifier of the Book Genre")]
         public int GenreId { get; set; }
 
         [ForeignKey(nameof(GenreId))]
-        [Comment("The current Book's Genre")]
+        [Comment("The Genre of the Book")]
         public Genre Genre { get; set; } = null!;
 
         [Required]
         [MaxLength(DescriptionMaxLength)]
-        [Comment("The current Book's Description")]
+        [Comment("The Description of Book")]
         public string Description { get; set; } = null!;
 
         [Required]
-        [Comment("The current Book's Pages Count")]
+        [Comment("The Book's Pages Count")]
         public int Pages { get; set; }
 
 
         [Required]
-        [Comment("The date on which the curent Book was published")]
+        [Comment("The published date on the Book")]
         public int ReleaseDate { get; set; }
 
         [Required]
-        [Comment("The current Book's Price")]
+        [Comment("The Price of the Book")]
         public decimal Price { get; set; }
 
         [Required]
         [MaxLength(ImageUrlMaxLength)]
-        [Comment("The current Book's cover image url")]
+        [Comment("The Book's cover Image Url")]
         public string ImageUrl { get; set; } = null!;
 
         public ICollection<BookBookStore> BooksBookStores { get; set; } = new HashSet<BookBookStore>();
