@@ -1,52 +1,54 @@
 ﻿namespace LibraVerse.Data.Models.Events
 {
     using Microsoft.EntityFrameworkCore;
+    using LibraVerse.Data.Models.Mappings;
     using System.ComponentModel.DataAnnotations;
     using static LibraVerse.Common.Constants.EntityValidationConstants.Event;
-    using LibraVerse.Data.Models.Mappings;
+
     public class Event
     {
         [Key]
-        [Comment("The Identifier of the Event")]
+        [Comment("The current Event's Identifier")]
         public int Id { get; set; }
 
         [Required]
         [MaxLength(EventTopicMaxLength)]
-        [Comment("The Topic of the Event")]
+        [Comment("The current Event's Topic")]
         public string Topic { get; set; } = null!;
 
         [Required]
         [MaxLength(EventDescriptionMaxLength)]
-        [Comment("The Description of the Event")]
+        [Comment("The current Event's Description")]
         public string Description { get; set; } = null!;
 
         [Required]
         [MaxLength(EventLocationMaxLength)]
-        [Comment("The Location of the Event")]
+        [Comment("The current Event's Location")]
         public string Location { get; set; } = null!;
 
         [Required]
-        [Comment("The start date and start hour of the Event")]
+        [Comment("The current Event's start date and hour")]
         public DateTime StartDate { get; set; }
 
         [Required]
-        [Comment("The end date and the end hour of the Event")]
+        [Comment("The current Event's end date and hour")]
         public DateTime EndDate { get; set; }
 
         [Required]
-        [Comment("The seats of the Event")]
+        [Comment("The current Event's seats")]
         public int Seats { get; set; }
 
         [Required]
-        [Comment("The Price of the Ticet on the Event")]
+        [Comment("The current Event's Ticket Price")]
         public decimal TicketPrice { get; set; } = 10;
 
         [Required]
         [MaxLength(EventImageUrlMaxLength)]
-        [Comment("The Image Url of the Event")]
+        [Comment("The current Event's Image Url")]
         public string ImageUrl { get; set; } = null!;
 
         public ICollection<EventParticipant> EventsParticipants { get; set; } = new HashSet<EventParticipant>();
         public ICollection<EventCart> EventsCarts { get; set; } = new HashSet<EventCart>();
+        public DateTime DateAdded { get; set; }
     }
 }
