@@ -4,6 +4,7 @@ using LibraVerse.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraVerse.Data.Migrations
 {
     [DbContext(typeof(LibraDbContext))]
-    partial class LibraDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241128121132_UpdateForNoImg")]
+    partial class UpdateForNoImg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -323,152 +326,152 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ClosingTime = new DateTime(2024, 11, 29, 20, 30, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 20, 30, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 88 651 1944",
                             ImageUrl = "https://lh3.googleusercontent.com/p/AF1QipOEsGmlKTuS7Nog7kX9vQfcWBwxw5tyAloSvkMz=s1360-w1360-h1020-rw",
                             Location = "бул. Цар Освободител 22, 1000 София, България",
                             Name = "Ciela - София",
-                            OpeningTime = new DateTime(2024, 11, 29, 8, 30, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 8, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            ClosingTime = new DateTime(2024, 11, 29, 19, 30, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 19, 30, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 56 800 620",
                             ImageUrl = "https://lh3.googleusercontent.com/p/AF1QipPs7hpPMTum4GJ7Iny4YCZLVYiZeh0ljXxykOiQ=s1360-w1360-h1020-rw",
                             Location = "Бургас Център, ул. „Тройката“ 4, 8000 Бургас",
                             Name = "Helikon - Бургас",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            ClosingTime = new DateTime(2024, 11, 29, 22, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 88 403 2576",
                             ImageUrl = "https://lh3.googleusercontent.com/p/AF1QipPQqWlmrzQ2BrBpRpyshwBFFeLofJKUlGeCIDf3=s1360-w1360-h1020",
                             Location = "Хладилника, бул. „Черни връх“ 100, 1407 София",
                             Name = "Orange - Paradise Center",
-                            OpeningTime = new DateTime(2024, 11, 29, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 4,
-                            ClosingTime = new DateTime(2024, 11, 29, 20, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 32 207 621",
                             ImageUrl = "https://cdn.oink.bg/gallery/23010/05adf581-0397-4f92-a9fa-65a087cd918f_large.webp",
                             Location = "ул. „Княз Александър I-ви“ 29, 4000 Пловдив",
                             Name = "Helikon - Пловдив Център",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 5,
-                            ClosingTime = new DateTime(2024, 11, 29, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 74 780 568",
                             ImageUrl = "https://web-portalbg.com/media/data/official_reskin_data/images2500/test_folder/1153/Logo/logo.jpg",
                             Location = "ул. „Шейново“ 6, 2760 Разлог",
                             Name = "Дъга - Разлог",
-                            OpeningTime = new DateTime(2024, 11, 29, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 6,
-                            ClosingTime = new DateTime(2024, 11, 29, 19, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 19, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 89 699 7710",
                             ImageUrl = "https://lh3.googleusercontent.com/p/AF1QipPzW0X4Y2MxHq2gWA7Db5RAe4FgFzdhySCLPc-6=s1360-w1360-h1020-rw",
                             Location = "Ларго, ул. „Тодор Александров“ 2, 2700 Благоевград",
                             Name = "Хермес",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 7,
-                            ClosingTime = new DateTime(2024, 11, 29, 19, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 19, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+359 87 922 8009",
                             ImageUrl = "https://lh3.googleusercontent.com/p/AF1QipOoQHzIG3B8LxmxLjyoCSlDD93L6ftaFLVYFWzX=s680-w680-h510-rw",
                             Location = "Варна Център Одесос, ул. „Цар Симеон I“ 1, 9000 Варна",
                             Name = "Bookpoint - Варна",
-                            OpeningTime = new DateTime(2024, 11, 29, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 8,
-                            ClosingTime = new DateTime(2024, 11, 29, 21, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+44 20 7851 2400",
                             ImageUrl = "https://lh3.googleusercontent.com/p/AF1QipO70gybohOeMNg3RDqh-tICLGqJIkeRoDEEBfOS=s1360-w1360-h1020",
                             Location = "203-206 Piccadilly, London W1J 9HD, UK",
                             Name = "Waterstones - Piccadilly",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 9,
-                            ClosingTime = new DateTime(2024, 11, 29, 22, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+55 11 3813-2731",
                             ImageUrl = "https://images.adsttc.com/media/images/55f6/eac2/adbc/0118/6200/02bf/newsletter/room-surrounded-with-bookshelfs-on-the-ground-floor-and-undergro.jpg?1442245289",
                             Location = "Rua dos Três Irmãos, 11, Vila Progredior, São Paulo - SP, Brazil",
                             Name = "Livraria da Vila",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 10,
-                            ClosingTime = new DateTime(2024, 11, 29, 22, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+54 11 4813-6052",
                             ImageUrl = "https://indiehoy.com/wp-content/uploads/2019/01/ateneo-640x426.jpg",
                             Location = "Av. Santa Fe 1860, C1425BTH, Buenos Aires, Argentina",
                             Name = "El Ateneo Grand Splendid",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 11,
-                            ClosingTime = new DateTime(2024, 11, 29, 22, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+1 415-362-8193",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/f/fb/City_Lights_Booksellers.jpg",
                             Location = "261 Columbus Ave, San Francisco, CA 94133, USA",
                             Name = "City Lights Booksellers",
-                            OpeningTime = new DateTime(2024, 11, 29, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 12,
-                            ClosingTime = new DateTime(2024, 11, 29, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+61 2 9264 6654",
                             ImageUrl = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/c7/bd/a4/street-level-showing.jpg?w=1200&h=-1&s=1",
                             Location = "424 George St, Sydney NSW 2000, Australia",
                             Name = "Dymocks - Sydney",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 13,
-                            ClosingTime = new DateTime(2024, 11, 29, 20, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+44 20 7437 5660",
                             ImageUrl = "https://cdn.foyles.co.uk/uat/images/00243704-1200x925.png",
                             Location = "107 Charing Cross Rd, London WC2H 0DT, UK",
                             Name = "Foyles - Charing Cross",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 30, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 30, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 14,
-                            ClosingTime = new DateTime(2024, 11, 29, 19, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 19, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+351 22 200 2037",
                             ImageUrl = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/fa/10/7d/20200910-113406-largejpg.jpg?w=1200&h=-1&s=1",
                             Location = "Rua das Carmelitas 144, 4050-161 Porto, Portugal",
                             Name = "Livraria Lello",
-                            OpeningTime = new DateTime(2024, 11, 29, 10, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 15,
-                            ClosingTime = new DateTime(2024, 11, 29, 22, 0, 0, 0, DateTimeKind.Unspecified),
+                            ClosingTime = new DateTime(2024, 11, 28, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             Contact = "+86 10 6500 2676",
                             ImageUrl = "https://www.thatsmags.com/image/view/201806/the-bookworm.jpg",
                             Location = "4 Sanlitun Nan Lu, Chaoyang, Beijing, China",
                             Name = "The Bookworm",
-                            OpeningTime = new DateTime(2024, 11, 29, 9, 0, 0, 0, DateTimeKind.Unspecified)
+                            OpeningTime = new DateTime(2024, 11, 28, 9, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -554,9 +557,6 @@ namespace LibraVerse.Data.Migrations
                         .HasColumnType("nvarchar(60)")
                         .HasComment("The current Book's Author");
 
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(10000)
@@ -603,7 +603,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 1,
                             Author = "Джек Лондон",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Разказва се за южняшкото куче Бък, което попада сред дивия север. След много битки с Шпиц, теглене на тежки пощенски шейни, неприятности с алчни хора, Бък открива Джон Тортън. Бък му остава верен до гроб, но дивите му истинкти надделяват и той често изчезва от лагера. Един ден той се връща от лов и вижда господаря си убит от ихатите. По-късно той се присъединява към глутница вълци. ",
                             GenreId = 1,
                             ImageUrl = "https://i2.helikon.bg/products/4956/05/54956/0658229_b.jpg?t=1732090822",
@@ -616,7 +615,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 2,
                             Author = "Паисий Хилендарски",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Има една книга, която винаги ще намери място в българския дом. На вашето внимание представяме луксозно фототипно издание на една от най-ценните родни творби – „История славянобългарска“ от Паисий Хилендарски. Достойнството на това издание е преводът на новобългарски. Той следва ред по ред Котленския препис на Софроний Врачански, представен чрез факсимилета на всяка страница. По този начин читателят може да вникне пълноценно в историческото повествование, четейки и сравнявайки написаното от хилендарския монах. Нещо повече  – използван е официално одобреният превод от Зографската света обител, дело на изтъкнатия преподавател в катедра „Кирилометодиевистика“ в Софийския университет ас. д-р Димитър Пеев. Съвместно с проф. Александър Николов, той е автор и на научния коментар. Изданието се реализира в сътрудничество със Зографската света обител и Националната библиотека Св. св. Кирил и Методий.",
                             GenreId = 12,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/32bb0748c82325b02c55df3c2a9a9856/i/s/istoria-slavianobylgarska.jpg",
@@ -629,7 +627,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 3,
                             Author = "Жул Верн",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "В един привидно нормален ден в ексклузивния клуб Reform, Филиас Фог, джентълмен с голямо богатство и взискателни вкусове, прави изключителен залог от £20 000; той ще извърши невъзможен подвиг и ще обиколи земното кълбо само за осемдесет дни. Придружен само от новия си френски камериер, упорития Паспарту, той тръгва на вълнуващо пътешествие. Следват приключения, хаос и романтика, докато Фог и Паспарту използват новата сила на парата, за да избягат от непрекъснато увеличаващите се врагове и да изпреварят времето.",
                             GenreId = 1,
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Verne_Tour_du_Monde.jpg/330px-Verne_Tour_du_Monde.jpg",
@@ -642,7 +639,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 4,
                             Author = "Херодот",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Уважаеми читателю,Историята на Херодот е забележително и увлекателно описание на персийските войни на царете Кир, Дарий, Камбис и Ксеркс, син на Дарий. С големи подробности е описана войната на персите с елинските градове държави, водена от цар Ксеркс, която започва през 499 г. пр.н.е. и продължава до 449 г. пр.н.е. Тази история е написана под формата на художествен разказ, наситен с исторически сведения, предания, легенди, преплетени с вярванията в системата от богове на елини и перси. Особен интерес за българската история представляват сведенията за тракийските народи, дадени във връзка с различни събития. За изучаващите историята на Европа и в частност на България тази книга е задължително четиво. Херодот е роден около 484 г. пр.н.е. в Халикарнас, в областта Кария в Мала Азия, по негово време градът е васал на Персия, и умира около 425 г. пр.н.е., така че той е съвременник на войната на Ксеркс, което прави сведенията му неоценимо полезни. Изучавайки този обемист литературно-исторически труд и огромното количество дискусии върху него, човек неминуемо се смущава от това, че Херодот бива наричан първи историк, бащата на историята и т.н. Не е възможно да се появи по онова време такъв забележителен труд без по негово време да е имало множество предшественици и съвременници, писали по подобен начин, но просто неумолимото време е съхранило за нас само този труд. През 1888 г. Ф. Г. Мищенко превежда на руски Историята на Херодот разделяйки я на два тома. Превод от старогръцки на български на избрани пасажи се появяват в Извори на старата история на Тракия и Македония, София, 1949 г., превод на Г. Кацаров и Б. Геров, Извори за историята на Тракия и траките, том 1, БАН, София, 1981, превод Иван Венедиков и Д. Бояджиев, а също и в превода на Д. Гетов, в Херодот, Исторически новели, Народна култура, София, 1982.Пълен превод на Историята на Херодот на български публикува Петър Ангелов Димитров: през 1986 г. първи том, а през 1990 г. втори том, използвайки английско и френско издание на старогръцкия текст на Историята. През 1972 г. Г. А. Стратановски прави нов превод от старогръцки. Този превод на руски е публикуван в интернет през 2008 година. Настоящето издание е превод от руски, като в случаи на съмнения е правена справка с превода на Димитров. Прави впечатление, че смисълът на всички пасажи е идентичен, но има някои разлики в изписването на персийските и елински имена. Д-р Николай Иванов Колев, 15.8.2024 - Херцогенаурах, Германия",
                             GenreId = 13,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/32bb0748c82325b02c55df3c2a9a9856/h/e/herodot-istoria.jpg",
@@ -655,7 +651,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 5,
                             Author = "Николай Райнов",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "„История на изкуството“ на Николай Райнов е грандиозен, несравним по своята всеобхватност и дълбочина труд, оказал огромно влияние върху развитието на българската култура. Блестящ ерудит, белетрист и поет, график и декоратор, историк и стилист, изследовател и философ, авторът проследява промените през различните епохи – от най-древните времена до началото на XX век – и изразяването на човешкия дух чрез изкуството.",
                             GenreId = 2,
                             ImageUrl = "https://i2.helikon.bg/products/6357/24/246357/246357_b.jpg?t=1732093233",
@@ -668,7 +663,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 6,
                             Author = "Астрид Линдгрен",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Астрид Линдгрен (1907-2002) е написала три романа за червенокосата Пипи: \"Пипи Дългото чорапче\" (1945), \"Пипи се качва на кораба\" (1946) и \"Пипи в южните морета\" (1948). През 1968 г. на български език се появява книга със заглавие \"Пипи Дългото чорапче\". В нея, както и в по-следващите й издания, са включени част от разказите за Пипи от трите романа. И по-точно - 24 от общо 32 глави. Така близо една трета от историите за червенокосото момиче остават непознати за нашия читател. В настоящото издание е събрана цялата трилогия за Пипи. За първи път на български език се публикуват главите: - Пипи се бори с огнена стихия - Пипи още живее във Вила Вилекула - Пипи пише писмо и пак тръгва на училище - но за малко... - И Пипи отива на училищен излет - Пипи на панаир - Пипи си остава във Вила Вилекула - Пипи разведрява леля Лаура",
                             GenreId = 5,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/32bb0748c82325b02c55df3c2a9a9856/f/i/file_267_80.jpg",
@@ -681,7 +675,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 7,
                             Author = "Марк Твен",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "За Том Сойер, Хъкълбери Фин и Беки животът край Мисисипи е непрекъснат низ от приключения, истински опасности и дори скрито съкровище, Да ги проследим заедно, водени от изкусния разказвач Марк Твен.",
                             GenreId = 5,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/32bb0748c82325b02c55df3c2a9a9856/9/7/9786192440992.jpg",
@@ -694,7 +687,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 8,
                             Author = "Айзък Азимов",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Един от най-великите научнофантастични романи, в който се разказва за разпадането на Галактическата империя и опитите на Хари Селдън да съхрани знанията на човечеството чрез създаването на Фондацията.",
                             GenreId = 24,
                             ImageUrl = "https://cdn.ozone.bg/media/catalog/product/cache/1/image/a4e40ebdc3e371adff845072e1c73f37/k/o/33e0e63922387923bfa42e3bec9f7e2c/kolektsiya-fondatsiya-30.jpg",
@@ -707,7 +699,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 9,
                             Author = "Ане Франк",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Дневникът на едно младо момиче, криещо се от нацистите в Амстердам. Този запис на надеждите, страховете и мислите ѝ е станал символ на човешката издръжливост.",
                             GenreId = 9,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/32bb0748c82325b02c55df3c2a9a9856/a/n/ane-frank-zadnata-kyshta-ciela-9789542827214.jpg",
@@ -720,7 +711,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 10,
                             Author = "Мигел де Сервантес",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Историята на рицаря от Ла Манча, който тръгва на приключение със своя оръженосец Санчо Панса. Сатиричен разказ за идеалите и реалността.",
                             GenreId = 6,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/7/9/79588.jpeg",
@@ -733,7 +723,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 11,
                             Author = "Алая Доун Джонсън",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "След като Земята е сполетяна от бедствия и разруха, оцелелите в Бразилия построяват града пирамида Палмареш Треш, в който жените управляват и периодично се избира Крал само за една година. Той трябва да посочи следващата Кралица, преди да бъде принесен в жертва. Непокорната и талантлива Джун Коста е запленена от последните избори и с всички средства подкрепя Анки, красиво момче от най-долното ниво на града. След като той печели, Джун и най-добрият й приятел Жил попадат в света на новия Крал. Енки е ярка и бързо изгряваща звезда, чиято светлина отваря очите на Джун за сериозните проблеми на Палмареш Треш. Двамата създават произведения на изкуството, които градът никога няма да забрави, и разпалват искрата на недоволството срещу властта. Под звуците на самба всички се впускат в танц на живот и смърт, в който залогът е бъдещето.",
                             GenreId = 10,
                             ImageUrl = "https://knizhen-pazar.net/books/088/8809/880919.jpg?size=22461",
@@ -746,7 +735,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 12,
                             Author = "Х. Д. Карлтън",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Аделайн се настанява в някога внушителното, но сега западнало имение „Парсънс“, което е наследила от баба си. Успешна писателка, надарена с богато въображение, тя се чувства съвсем на място сред готическата атмосфера на къщата и тайните, скътани във всяка паяжина. А когато случайно се натъква на дневника на прабаба си Джиджи, намерена мъртва в къщата преди повече от шейсет години, разбира, че може би е открила и ключа към мистерията кой я е убил.\r\n\r\nНо по-голямата загадка сякаш е кой е тайнственият непознат, който наблюдава къщата ѝ, преследва мъжете, осмелили се да я погледнат, и оставя червени рози в спалнята ѝ.\r\n\r\nИ защо, вместо да потърси помощ от полицията, Аделайн се наслаждава да го предизвиква?",
                             GenreId = 22,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/p/u/purva-adeline-latest.jpg",
@@ -759,7 +747,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 13,
                             Author = "Лорън Робъртс",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Ловец. Жертва. Обречени един за друг.\r\n\r\nЕдинствено необикновените имат място в кралство Илиа…\r\n\r\nОт десетилетия Елитните притежават своите сили, придобити благодарение на Чумата, докато Обикновените са изолирани от обществото и прокуждани от кралството.\r\n\r\nНикой не е изпитал това на гърба си по-добре от Пейдин Грей, Обикновена, която се представя за Ясновидец, за да се слее с тълпата от Елитни. Когато Пейдин, без да подозира, спасява живота на един от принцовете на Илиа, тя е включена против волята си в Изпитанията на Прочистването – жестока, кървава надпревара, превърната в демонстрация на силата на Елитните.\r\n\r\nАко противниците ѝ в Изпитанията не я убият, това ще направи принцът, с чувствата си към когото Пейдин напразно се опитва да се бори… А той непременно ще я убие, ако разбере, че тя е Обикновена.\r\n\r\nПотопете се в първия том от епичната фентъзи трилогия „Безсилна“ на Лорън Робъртс, изпълнена с приключения и романтика, която покори целия свят…\r\n\r\n",
                             GenreId = 10,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/_/-/_-__478.jpg",
@@ -772,7 +759,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 14,
                             Author = "Димитър Цолов",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "В сборника с ужаси от български автори \"Измерения на болката\" са включени разкази от:\r\n\r\nАлекс Цонков, Анна Гюрова, Димитър Маргаритов, Димитър Цолов, Елена Зелена Бърдарова, Елена Павлова, Мария Пеева, Мария Раднева, Милен Димитров, Нина Митева, Ралица Пейкова, Явор Цанев. Съставител и редактор е Милен Димитров. Разказите са маркирани с тагове за улеснение на читателя.\r\n\r\n...Историите се носят през пространство-времето, като преплитат в себе си минало, настояще и бъдеще, фентъзи, фантастика, паралелни светове и реализъм, а страхът в тях се проявява освен във фантастичното и непонятното, така и в чисто човешкото битие, където разноликите герои влизат в схватка както с външни сили, така и със самите себе си...",
                             GenreId = 14,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/_/-/_-_-_9786197771237_-_-_ciela.jpg",
@@ -785,7 +771,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 15,
                             Author = "Дженифър Лин Барнс",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Седем билета. Остров сред океана. Шанс, който се пада един път в живота.\r\n\r\nДобре дошли в „Най-великата игра“, ослепителното, променящо животи състезание, организирано от Ейвъри Грамс и четиримата скандално известни братя Хоторн. Създадена, за да предложи шанс за слава и богатство, тазгодишната игра е ограничена до седем късметлии.\r\n\r\nЛИЙРА е преследвана от смъртта на баща си и тайните, които е оставил след себе си. Тя си казва, че се е включила в състезанието заради наградата, а не, за да получи отговори относно участието на семейство Хоторн в трагичния край на баща ѝ и категорично не, за да се изправи срещу вбесяващия, загадъчен Грейсън Хоторн, когото вече е отхвърлила веднъж\r\n\r\nСрещу Лийра се изправят ДЖИДЖИ, полусестрата на Грейсън и истински слънчев лъч, решена да докаже, че е способна на повече, отколкото останалите смятат, и РОХАН, който има много малко морални задръжки, опасни и еклектични умения и никакво бъдеще - освен ако не спечели играта.\r\n\r\nЗахвърлени на частен остров, сред лукс и загадки за разрешаване, Лийра, Джиджи и Рохан трябва да направят всичко, на което са способни, за да надделеят един над друг, да се справят с останалите си страховити съперници и да победят в игра, която само най-острите умове биха могли да спечелят. Прехвърчат искри, предизвикателства тласкат участниците до предела на силите им, а всеки един от тях пази тайни, които няма как да останат погребани завинаги.\r\n\r\n",
                             GenreId = 27,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/g/r/grandestgame_bg_cv_front1728926839.7707.jpg.jpeg",
@@ -798,7 +783,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 16,
                             Author = "Петър Петров",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Книгата \"Счетоводство и финанси за нефинансови мени¬джъри\" ви предоставя лесен начин за разбиране на иначе сложната материя, свързана със счетоводството и финансите – до минималното ниво, което е необходимо на всеки нефинансов мениджър. Книгата може да бъде полезна и за изучаващите финанси, финансово и управленско счетовод¬ство, които срещат практически трудности в разбирането на тази материя. Книгата е структурирана в седем глави, представени под формата на уроци, запознаващи читателите с основните аспекти на активите, пасивите, приходите и разходите – както по отношение на тяхната същност и счетоводно отчитане, така и по отношение на икономическата и финансовата трактовка на свързаните с тях показатели.\r\nДнес новините изобилстват от примери за това до какво може да доведе липсата на минимални познания по счетоводство и финанси – кредитиране в швейцарски франкове при доходи в левове, договаряне на нереално високи преференциални лихви и др. За всички, които не желаят да бъдат част от тези новини, книгата \"Счетоводство и финанси за нефинансови мениджъри\" ще бъде учебното помагало, което съчетава хармонично необходимия минимум от теория на счетоводството и финансите със задължителния практикум за лесно усвояване на такива знания и неусетното им превръщане в умения.",
                             GenreId = 4,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/1/9/198677_b.jpg",
@@ -811,7 +795,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 17,
                             Author = "Зорница Русева",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "В тази книга Ръсел Брънсън, съосновател и изпълнителен директор на мултимилионната компания ClickFunnels, разкрива класическите основополагащи техники за директен маркетинг, които ще ви сложат на челно място сред успешните бизнес компании, ще ви посочат възможности, каквито мнозина пропускат да забележат, и ще ви обучат как да се отличавате от всички останали играчи.\r\n\r\nС инструкции стъпка по стъпка Брънсън ще ви научи да управлявате множество трафик източници, както и да прилагате пазарно проверени стратегии, за да:\r\n\r\nидентифицирате вашите мечтани клиенти;\r\nоткривате къде те вече се събират онлайн;\r\nсъздадете собствена платформа за публикуване;\r\nсъставите собствени списъци за разпространение.",
                             GenreId = 4,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/_/-/_-__453.jpg",
@@ -824,7 +807,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 18,
                             Author = "Иън Хaлпърин",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "На 24 декември 2008 г. световните медии публикуват скандалното заявление на разследващия журналист Иън Хaлпърин, че на Майкъл Джексън му остава половин година живот. Официалният говорител на звездата определя твърдението като „пълна измислица”. Шест месеца и един ден по-късно светът е разтърсен от новината за смъртта на Краля на попа.",
                             GenreId = 17,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/1/0/104198.jpeg",
@@ -837,7 +819,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 19,
                             Author = "Георги Владимиров",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Книгата „Българите на Волга“ е продукт на дългогодишните проучвания на д-р Г. Владимиров върху историята и културата на българите от заселването им в земите на Средна Волга през VIII в. до унищожаването на техния културен модел през втората половина на XVI в. На базата на писмени извори, археологически, етнографски и антропологически данни изданието проследява политическата и стопанската история, бита, материалната и духовната култура на населението на Волжка България, Златната орда и Казанското ханство.\r\n\r\n",
                             GenreId = 13,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/b/u/bulgarite_na_volga-hrm.jpg",
@@ -850,7 +831,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 20,
                             Author = "Йозеф Киршнер",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Манипулативната игра има свои правила и всеки, който иска да осъществи себе си, трябва да ги овладее. Книгата е предизвикателство за всички, които не искат да бъдат пасивни жертви на манипулацията, а съзнателно и целенасочено да се утвърждават във всекидневното общуване. Всеки има шанс да стане господар на съдбата си стига само да поеме инициативата.\r\n\r\n",
                             GenreId = 19,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/m/a/manipuliraite-no-pravilno-josef-kirshner-kibea.jpg",
@@ -863,7 +843,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 21,
                             Author = "Бевърли Глок",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Епичен роман за руското общество по време на Наполеоновите войни.",
                             GenreId = 7,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/5/0/500__7.jpg",
@@ -876,7 +855,6 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = 22,
                             Author = "Пергамент Прес",
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "В този сборник си дават среща изтънченият и понякога циничен хумор на англичаните, закачливият, дяволит и жизнерадостен хумор на шотландците, пиперливият и прям хумор на ирландците и накрая неподправеният и добродушен хумор на уелсците.",
                             GenreId = 15,
                             ImageUrl = "https://www.ciela.com/media/catalog/product/cache/9a7ceae8a5abbd0253425b80f9ef99a5/f/i/file_577_211.jpg",
@@ -1208,9 +1186,6 @@ namespace LibraVerse.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(10000)
@@ -1260,7 +1235,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "На 17 октомври (четвъртък) 2024 г., от 13:30 ч. ще се проведе събитите: Цял месец, посветен на Хари Потър не ни е достатъчен, затова имаме изненада за вас! За поредна година ще отбележим Деня на книгите за Хари Потър.",
                             EndDate = new DateTime(2024, 10, 17, 16, 30, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://www.libsofia.bg/public//storage/uploads/event/NyEfL4aR00tRO530JbTSI7tbIRhrioTFLnOhXTCV.png",
@@ -1273,7 +1247,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 2,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Анимационният типаж е най-важният компонент в анимационния разказ. Това е всъщност главният герой на рисувания филм, плод на творческите търсения на неговите „родители“ – режисьора и художника. Настоящото изследване проследява появата и развитието му от зората на анимационното кино до наши дни. Книгата съдържа повече от 1000 илюстрации и представлява интерес както за студенти и професионалисти в областта на анимацията, така и за всички любители на изкуството.",
                             EndDate = new DateTime(2024, 11, 20, 19, 30, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://azcheta.com/azcheta-content/uploads/2024/11/73-NBU-v-tsentara-Animatsionniyat-tipazh-20.11.jpg",
@@ -1286,7 +1259,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 3,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Столична библиотека организира в Американския център паметна вечер по случай 110 години от рождението на големия български писател и кинодраматург Павел Вежинов. В програмата са включени премиери на 9-ото издание на „Нощем с белите коне“, на неиздаваните от повече от 80 години два дебютни сборника с разкази на Павел Вежинов в авторска редакция „Улица без паваж. Дни и вечери“ и най-новото издание на Столична библиотека „Павел Вежинов – биобиблиография“. Ще бъде представена фотодокументалната изложба на Библиотеката, представяща сложния житейски и творчески път на писателя. В паметната вечер с водещ Юрий Дачев ще участват съвременници на Павел Вежинов – известни литератори и филмови творци, издателите Игор Шемтов от „Фама 1“ и Савина Николова от „Orange books“, изследователи на творчеството му. Вечерта ще завърши с прожекция на един от най-интересните документални филми за Павел Вежинов „Сини залези и бели коне“ на БНТ.",
                             EndDate = new DateTime(2024, 11, 20, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://azcheta.com/azcheta-content/uploads/2024/11/Vezhinov.jpg",
@@ -1299,7 +1271,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 4,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Като кадри от филм се редуват сцени от живота на две българки във Франция в началото на новия век. Въоръжена с „Големия енциклопедичен речник Ларус“ и „Малкия Ларус на добрите обноски“, студентката по кино в Лион открива „страната на свободата, на сирената и на говорещите трамваи“, бори се с тънкостите на френския език, сблъсква се и с едно особено отношение към „момичетата от Изтока“. Разказани увлекателно, с хумор и самоирония, перипетиите ѝ са контрапункт на съдбата на втората героиня. Дора, самотна майка на две момчета, преминала през възродителния процес и безчет житейски несгоди в България, попаднала в мрежа на трафиканти, е принудена да проституира. Борбената Дора, в чийто живот светъл лъч внася само „вълшебната лампа“ на баба ѝ Арифе, също се вписва в разпространеното клише „момиче от Изтока“. Един ден пътищата на двете героини неочаквано се пресичат…",
                             EndDate = new DateTime(2024, 11, 21, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://www.colibri.bg/uploads/2024/11/egeorgieva_event.jpg",
@@ -1312,7 +1283,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 5,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "В този внушителен по обем и времеви обхват литературен труд, който авторът е нарекъл „Моите истории“, а някои биха го определили като своеобразен „дневник на писателя“, Георги Борисов представя непубликувани свои стихотворения, мисли и наблюдения, философски есета и мемоарна проза, литературни портрети и свидетелства, сценки и житейски истории, белязали неговия път в продължение на половин век. Сред най-любопитните от разделите в настоящия том е първият – и като форма, и като тематика, – който препраща към Далчевите „Фрагменти“ и представлява особен принос с „опитите“ на поета да разгадае същността на поезията и творческия процес, многоликите маски на битието и холограмите на словото, безкрайните възможности и измамната нищета на българската рима.",
                             EndDate = new DateTime(2024, 11, 21, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://www.colibri.bg/uploads/2024/11/borisov_event.jpg",
@@ -1325,7 +1295,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 6,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "„Анархия на сърцето“ е царицата на меланхолиите и обречената любов, но и оголен до рана нерв, който води до удобно премълчаваните въпроси за социалното неравенство и липсата на човешкото в социума, за вируса на страха и самотата, за забравата на миналото и отричането на бъдещето, за ужаса на войната, за самотната вечеря на Бога, за разрухата на сърцето... Тази книга е юмрук право в кривите зъби на мълчанието ни, опит за редакция на света, но и любов към ближния, към поезията и към свободата да обичаш до смърт.",
                             EndDate = new DateTime(2024, 11, 7, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://kulturni-novini.info/news/images/40166_1.jpg",
@@ -1338,7 +1307,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 7,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "На 6 ноември (сряда) от 17.30 часа, в залата на Регионална библиотека „Стилиян Чилингиров” – Шумен  ще се състои премиера на книгата „НаПРАВО в живота” на Румяна Мичева. Книгата ще представи проф. Теменуга Тенева, откъси от творбата ще прочете Ирина Николова.",
                             EndDate = new DateTime(2024, 11, 6, 18, 30, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://kulturni-novini.info/news/images/40141_1.jpg",
@@ -1351,7 +1319,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 8,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Заповядайте на официалната премиера на Ръцете, с които оцеляваме - втората стихосбирка на талантливата Боряна Богданова.",
                             EndDate = new DateTime(2024, 11, 5, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://kulturni-novini.info/news/images/40135_1.jpg",
@@ -1364,7 +1331,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 9,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Любен Дилов ще представи дебютната книга на Калина Серкеждиева Нишки. Няколко думи ще кажат: Стойко Стоянов, Мира Радева, Азиз Таш. Откъси от книгата ще прочете актрисата Петя Бончева. \r\n\r\nЗа доброто ни настроение ще се погрижат: Two cities one world, Александър Иванов (пиано и вокал). Вокал: Анна Янова. Фотограф: Тихомира Методиева-Тихич. Камера: Димитър Григоров. Водещ: Алина Караханова. Заповядайте на чаша вино и топли приказки!",
                             EndDate = new DateTime(2024, 10, 29, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "https://kulturni-novini.info/news/images/40081_1.jpg",
@@ -1377,7 +1343,6 @@ namespace LibraVerse.Data.Migrations
                         new
                         {
                             Id = 10,
-                            DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Заповядайте на официалната премиера на дебютния сборник с разкази на София Стойнева в уютното пространство на конферентната зала на хотел \"Елит\".\r\n ",
                             EndDate = new DateTime(2024, 10, 10, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             ImageUrl = "/assets/img/coming-soon.jpg",
@@ -1416,14 +1381,6 @@ namespace LibraVerse.Data.Migrations
                         .HasColumnType("int")
                         .HasComment("The current Cart's Identifier");
 
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("datetime2")
-                        .HasComment("Date when the book was added to the cart");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int")
-                        .HasComment("The quantity of the book in the cart");
-
                     b.HasKey("BookId", "CartId");
 
                     b.HasIndex("CartId");
@@ -1440,14 +1397,6 @@ namespace LibraVerse.Data.Migrations
                     b.Property<int>("CartId")
                         .HasColumnType("int")
                         .HasComment("The current Cart's Identifier");
-
-                    b.Property<DateTime>("DateAdded")
-                        .HasColumnType("datetime2")
-                        .HasComment("Date when the event was added to the cart");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int")
-                        .HasComment("The quantity of the event in the cart");
 
                     b.HasKey("EventId", "CartId");
 
@@ -1552,43 +1501,43 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = "7c8eb412-65a9-4050-8c67-62278f3af93c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "88f149e6-f202-4d75-a2fe-cfbad00e7b12",
-                            Email = "petya_guest@gmail.com",
+                            ConcurrencyStamp = "2744037d-78f2-4cd3-97e4-adfdac0378a3",
+                            Email = "guest@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Petya",
                             LastName = "Guesta",
                             LockoutEnabled = false,
-                            NormalizedEmail = "PETYA_GUEST@GMAIL.COM",
-                            NormalizedUserName = "PETYA_GUEST@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDAkPokfMPQw5s+c7aXZMEokoLO6ilUZpHu89HVFn+ItoxmKPkDdfE1qZcjNvzYfnw==",
+                            NormalizedEmail = "GUEST@GMAIL.COM",
+                            NormalizedUserName = "GUEST@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGxuZEyv251x+kUEyeoZzF7ZX3DDd21vb9ToXC6dKSDIHBvV2nsWkVMTk9bsSPxNkQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e30903ab-8397-4d94-bea5-9b8b33a4c9ca",
+                            SecurityStamp = "37f626b0-b563-4a85-9b6c-a60a63232bd5",
                             TwoFactorEnabled = false,
-                            UserName = "petya_guest@gmail.com"
+                            UserName = "guest@gmail.com"
                         },
                         new
                         {
                             Id = "9abf1366-cadf-4837-bc30-1b77599ff9cb",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f211d1ed-ec51-4780-b10b-d2f1649b526c",
-                            Email = "nasko_publisher@gmail.com",
+                            ConcurrencyStamp = "24951978-0dea-4c66-bc66-2f595c537a10",
+                            Email = "publisher@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Nasko",
                             LastName = "Publisher",
                             LockoutEnabled = false,
-                            NormalizedEmail = "NASKO_PUBLISHER@GMAIL.COM",
-                            NormalizedUserName = "NASKO_PUBLISHER@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBtGwi0Z59cT8miIDHP4MQPVWmJPPSJp1ylvMGnxvJApH447EwYbn+NmUDpkjQnKwg==",
+                            NormalizedEmail = "PUBLISHER@GMAIL.COM",
+                            NormalizedUserName = "PUBLISHER@GMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEcPM3je7SGl03xKE3NDT5jaKXB384Tq4Su27aIzrVwV8nB/JIEsr01JvNshDQpBDg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e3485ce9-57ce-43ed-98e2-9a4627157c93",
+                            SecurityStamp = "bf9e65c6-7c52-49cf-8d4d-7ec79e1e176f",
                             TwoFactorEnabled = false,
-                            UserName = "nasko_publisher@gmail.com"
+                            UserName = "publisher@gmail.com"
                         },
                         new
                         {
                             Id = "8482124a-1681-41b9-81bd-83e20223d345",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a1fe531e-02bf-41d2-8ffa-a7418d9fd315",
+                            ConcurrencyStamp = "73ac423a-8338-4fa9-a345-1b8f392a3a7e",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Klinchoni",
@@ -1596,9 +1545,9 @@ namespace LibraVerse.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPkrjqr3m9NCfs6hqHRqd+pnQ1KZGNvx5HI0mdSQV50VodSX99Npq4eeCwoK5Cznag==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEO1dkwENR8oxTxasDhtDa+7EY6oiOpWOBOc69/7xQHVjgjGinPvB1ED3Ft/SueEPJw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "327f2de2-ef79-4806-8585-d9f79795e6de",
+                            SecurityStamp = "88513415-780d-41b4-af09-99d090a5dddf",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         },
@@ -1606,7 +1555,7 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = "b4a1311e-dff4-4c3a-9cf7-b794557bdf80",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e1776e24-fa1e-4561-9e53-03680fb44b3b",
+                            ConcurrencyStamp = "fc0d3e96-8367-4870-a6a0-28d058d8e785",
                             Email = "ivankl@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Ivan",
@@ -1614,9 +1563,9 @@ namespace LibraVerse.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "IVANKL@GMAIL.COM",
                             NormalizedUserName = "IVANKL@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIqdKE2JAvA2RRHjsgDgbApvNtojKn5ekJs1V8QnxDT3P0x1y/qW0FoVX/bMlNoyIQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGDiZs6eZAL0N6hob+7xUZESdZHBW5YQiyq12g8OQ0xnpYlM8fXpWM6ewgz8Y4YT8g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "36868e48-4f4d-4176-8c22-ed56a5630779",
+                            SecurityStamp = "1fbb28da-1b66-4803-8025-1eab880ad84a",
                             TwoFactorEnabled = false,
                             UserName = "ivankl@gmail.com"
                         },
@@ -1624,7 +1573,7 @@ namespace LibraVerse.Data.Migrations
                         {
                             Id = "c4fbe2f71-126f-46c3-af99-8dc035eac772",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c7e892fd-7e67-413b-a039-22f63ec6660f",
+                            ConcurrencyStamp = "85876143-211a-463a-bf54-739ecb43981b",
                             Email = "yonni@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Yonni",
@@ -1632,9 +1581,9 @@ namespace LibraVerse.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "YONNI@GMAIL.COM",
                             NormalizedUserName = "YONNI@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGIPkMZI+8eu2OQf2ylgxYTpbjALrQoLHDhJ3cfwRzy9PpPUeZ/UivdciJWotquTrA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDks0acolPor5TBfNsWSbDWju29aCqNrmNrW44r6wN/qnLQlpp7fzXFFuETODnPHzg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b5d66e34-7eb4-479f-8f00-1ad42ff6c7ed",
+                            SecurityStamp = "6b99fe62-997c-48c1-b7e2-21bd619a74dd",
                             TwoFactorEnabled = false,
                             UserName = "yonni@gmail.com"
                         });
