@@ -1,28 +1,29 @@
 ﻿namespace LibraVerse.Data.Models.Mappings
 {
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using LibraVerse.Data.Models.Events;
     using LibraVerse.Data.Models.Roles;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class EventParticipant
     {
         [Required]
-        [Comment("The Identifier of the Event")]
+        [Comment("The current Event's Identifier")]
         public int EventId { get; set; }
 
         [ForeignKey(nameof(EventId))]
-        [Comment("The Event")]
+        [Comment("The current Event")]
         public Event Event { get; set; } = null!;
 
 
         [Required]
-        [Comment("The Identifier of the Participant")]
+        [Comment("The current Participant's Identifier")]
         public string ParticipantId { get; set; } = null!;
 
         [ForeignKey(nameof(ParticipantId))]
-        [Comment("The Participant")]
+        [Comment("The current Participant")]
         public ApplicationUser Participant { get; set; } = null!;
     }
 }
