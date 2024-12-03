@@ -2,8 +2,8 @@
 {
     using LibraVerse.Core.Contracts;
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants;
-    using static LibraVerse.Data.Constants.DataConstants.ArticleConstants;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Article;
+    using static LibraVerse.Common.EntityValidationMessages.Data;
 
     public class ArticleAddViewModel : IArticleModel
     {
