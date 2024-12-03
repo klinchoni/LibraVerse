@@ -1,4 +1,4 @@
-﻿namespace LibraVerse.Common
+﻿namespace LibraVerse.Common.Constants
 {
     public static class CustomClaims
     {
