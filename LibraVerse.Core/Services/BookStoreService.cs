@@ -6,11 +6,11 @@
     using LibraVerse.Core.Models.QueryModels.Book;
     using LibraVerse.Core.Models.QueryModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.BookStore;
-    using LibraVerse.Common;
+    using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.BookStores;
     using System;
-    using static LibraVerse.Data.Constants.DataConstants.BookStoreConstants;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.BookStore;
 
     public class BookStoreService : IBookStoreService
     {
@@ -166,7 +166,6 @@
         public async Task<BookQueryServiceModel> AllBooksAsync(
             int bookStoreId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -181,12 +180,6 @@
                     .Where(b => b.Genre.Name.ToLower() == genre.ToLower());
             }
 
-            if (coverType != null)
-            {
-                booksToShow = booksToShow
-                    .Where(b => b.CoverType.Name.ToLower() == coverType.ToLower());
-            }
-
             if (searchTerm != null)
             {
                 string normalizedSearchTerm = searchTerm.ToLower();
@@ -194,15 +187,11 @@
                 booksToShow = booksToShow
                 .Where(b => normalizedSearchTerm.Contains(b.Title.ToLower())
                 || normalizedSearchTerm.Contains(b.Author.ToLower())
-                || normalizedSearchTerm.Contains(b.PublishingHouse.ToLower())
                 || normalizedSearchTerm.Contains(b.Genre.Name.ToLower())
-                || normalizedSearchTerm.Contains(b.CoverType.Name.ToLower())
 
                 || b.Title.ToLower().Contains(normalizedSearchTerm)
                 || b.Author.ToLower().Contains(normalizedSearchTerm)
-                || b.PublishingHouse.ToLower().Contains(normalizedSearchTerm)
-                || b.Genre.Name.ToLower().Contains(normalizedSearchTerm)
-                || b.CoverType.Name.ToLower().Contains(normalizedSearchTerm));
+                || b.Genre.Name.ToLower().Contains(normalizedSearchTerm));
             }
 
             booksToShow = sorting switch

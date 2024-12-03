@@ -5,7 +5,7 @@
     using LibraVerse.Core.Enums;
     using LibraVerse.Core.Models.QueryModels.Article;
     using LibraVerse.Core.Models.ViewModels.Article;
-    using LibraVerse.Common;
+    using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Articles;
 
     public class ArticleService : IArticleService

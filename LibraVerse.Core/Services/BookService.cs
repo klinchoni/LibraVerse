@@ -6,7 +6,7 @@
     using LibraVerse.Core.Models.QueryModels.Book;
     using LibraVerse.Core.Models.QueryModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.Book;
-    using LibraVerse;
+    using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.BookStores;
     using LibraVerse.Data.Models.BookUserActions;
@@ -24,7 +24,6 @@
         }
 
         public async Task<BookQueryServiceModel> AllAsync(string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -38,12 +37,6 @@
                     .Where(b => b.Genre.Name.ToLower() == genre.ToLower());
             }
 
-            if (coverType != null)
-            {
-                booksToShow = booksToShow
-                    .Where(b => b.CoverType.Name.ToLower() == coverType.ToLower());
-            }
-
             if (searchTerm != null)
             {
                 string normalizedSearchTerm = searchTerm.ToLower();
@@ -51,15 +44,11 @@
                 booksToShow = booksToShow
                 .Where(b => normalizedSearchTerm.Contains(b.Title.ToLower())
                 || normalizedSearchTerm.Contains(b.Author.ToLower())
-                || normalizedSearchTerm.Contains(b.PublishingHouse.ToLower())
                 || normalizedSearchTerm.Contains(b.Genre.Name.ToLower())
-                || normalizedSearchTerm.Contains(b.CoverType.Name.ToLower())
 
                 || b.Title.ToLower().Contains(normalizedSearchTerm)
                 || b.Author.ToLower().Contains(normalizedSearchTerm)
-                || b.PublishingHouse.ToLower().Contains(normalizedSearchTerm)
-                || b.Genre.Name.ToLower().Contains(normalizedSearchTerm)
-                || b.CoverType.Name.ToLower().Contains(normalizedSearchTerm));
+                || b.Genre.Name.ToLower().Contains(normalizedSearchTerm));
             }
 
             booksToShow = sorting switch
@@ -149,24 +138,6 @@
             };
         }
 
-
-        public async Task<IEnumerable<CoverTypeViewModel>> AllCoverTypesAsync()
-        {
-            return await repository.AllAsReadOnly<CoverType>()
-                .Select(ct => new CoverTypeViewModel()
-                {
-                    Id = ct.Id,
-                    Name = ct.Name
-                })
-                .ToListAsync();
-        }
-        public async Task<IEnumerable<string>> AllCoverTypesNamesAsync()
-        {
-            return await repository.AllAsReadOnly<CoverType>()
-                .Select(ct => ct.Name)
-                .ToListAsync();
-        }
-
         public async Task<IEnumerable<GenreViewModel>> AllGenresAsync()
         {
             return await repository.AllAsReadOnly<Genre>()
@@ -202,12 +173,6 @@
                 .AnyAsync(g => g.Id == genreId);
         }
 
-        public async Task<bool> CoverTypeExistsAsync(int coverTypeId)
-        {
-            return await repository.AllAsReadOnly<CoverType>()
-                .AnyAsync(ct => ct.Id == coverTypeId);
-        }
-
         public async Task<BookViewModel> DetailsAsync(int bookId)
         {
             Book? currentBook = await repository.AllAsReadOnly<Book>()
@@ -216,8 +181,6 @@
             Genre? currentGenre = await repository.AllAsReadOnly<Genre>()
                 .FirstOrDefaultAsync(g => g.Id == currentBook.GenreId);
 
-            CoverType? currentCoverType = await repository.AllAsReadOnly<CoverType>()
-                .FirstOrDefaultAsync(ct => ct.Id == currentBook.CoverTypeId);
 
             var bookReviews = await repository.AllAsReadOnly<BookReview>()
                 .Where(br => br.BookId == bookId)
@@ -231,9 +194,7 @@
                 Genre = currentGenre.Name,
                 Description = currentBook.Description,
                 Pages = currentBook.Pages,
-                PublishingHouse = currentBook.PublishingHouse,
                 YearPublished = currentBook.YearPublished,
-                CoverType = currentCoverType.Name,
                 Price = currentBook.Price,
                 ImageUrl = currentBook.ImageUrl,
                 Reviews = bookReviews
@@ -245,7 +206,6 @@
         public async Task<BookQueryServiceModel> AllWantToReadBooksIdsByUserIdAsync(
             string userId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -260,11 +220,6 @@
                     .Where(b => b.Book.Genre.Name.ToLower() == genre.ToLower());
             }
 
-            if (coverType != null)
-            {
-                booksToShow = booksToShow
-                    .Where(b => b.Book.CoverType.Name.ToLower() == coverType.ToLower());
-            }
 
             if (searchTerm != null)
             {
@@ -273,15 +228,11 @@
                 booksToShow = booksToShow
                 .Where(b => normalizedSearchTerm.Contains(b.Book.Title.ToLower())
                 || normalizedSearchTerm.Contains(b.Book.Author.ToLower())
-                || normalizedSearchTerm.Contains(b.Book.PublishingHouse.ToLower())
                 || normalizedSearchTerm.Contains(b.Book.Genre.Name.ToLower())
-                || normalizedSearchTerm.Contains(b.Book.CoverType.Name.ToLower())
 
                 || b.Book.Title.ToLower().Contains(normalizedSearchTerm)
                 || b.Book.Author.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.PublishingHouse.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.Genre.Name.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.CoverType.Name.ToLower().Contains(normalizedSearchTerm));
+                || b.Book.Genre.Name.ToLower().Contains(normalizedSearchTerm));
             }
 
             booksToShow = sorting switch
@@ -321,7 +272,6 @@
         public async Task<BookQueryServiceModel> AllCurrentlyReadingBooksIdsByUserIdAsync(
             string userId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -336,12 +286,6 @@
                     .Where(b => b.Book.Genre.Name.ToLower() == genre.ToLower());
             }
 
-            if (coverType != null)
-            {
-                booksToShow = booksToShow
-                    .Where(b => b.Book.CoverType.Name.ToLower() == coverType.ToLower());
-            }
-
             if (searchTerm != null)
             {
                 string normalizedSearchTerm = searchTerm.ToLower();
@@ -349,15 +293,11 @@
                 booksToShow = booksToShow
                 .Where(b => normalizedSearchTerm.Contains(b.Book.Title.ToLower())
                 || normalizedSearchTerm.Contains(b.Book.Author.ToLower())
-                || normalizedSearchTerm.Contains(b.Book.PublishingHouse.ToLower())
                 || normalizedSearchTerm.Contains(b.Book.Genre.Name.ToLower())
-                || normalizedSearchTerm.Contains(b.Book.CoverType.Name.ToLower())
 
                 || b.Book.Title.ToLower().Contains(normalizedSearchTerm)
                 || b.Book.Author.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.PublishingHouse.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.Genre.Name.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.CoverType.Name.ToLower().Contains(normalizedSearchTerm));
+                || b.Book.Genre.Name.ToLower().Contains(normalizedSearchTerm));
             }
 
             booksToShow = sorting switch
@@ -397,7 +337,6 @@
         public async Task<BookQueryServiceModel> AllReadBooksIdsByUserIdAsync(
             string userId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -412,12 +351,6 @@
                     .Where(b => b.Book.Genre.Name.ToLower() == genre.ToLower());
             }
 
-            if (coverType != null)
-            {
-                booksToShow = booksToShow
-                    .Where(b => b.Book.CoverType.Name.ToLower() == coverType.ToLower());
-            }
-
             if (searchTerm != null)
             {
                 string normalizedSearchTerm = searchTerm.ToLower();
@@ -425,15 +358,11 @@
                 booksToShow = booksToShow
                 .Where(b => normalizedSearchTerm.Contains(b.Book.Title.ToLower())
                 || normalizedSearchTerm.Contains(b.Book.Author.ToLower())
-                || normalizedSearchTerm.Contains(b.Book.PublishingHouse.ToLower())
                 || normalizedSearchTerm.Contains(b.Book.Genre.Name.ToLower())
-                || normalizedSearchTerm.Contains(b.Book.CoverType.Name.ToLower())
 
                 || b.Book.Title.ToLower().Contains(normalizedSearchTerm)
                 || b.Book.Author.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.PublishingHouse.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.Genre.Name.ToLower().Contains(normalizedSearchTerm)
-                || b.Book.CoverType.Name.ToLower().Contains(normalizedSearchTerm));
+                || b.Book.Genre.Name.ToLower().Contains(normalizedSearchTerm));
             }
 
             booksToShow = sorting switch

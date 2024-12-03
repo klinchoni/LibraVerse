@@ -5,7 +5,7 @@
     using LibraVerse.Core.Enums;
     using LibraVerse.Core.Models.QueryModels.Event;
     using LibraVerse.Core.Models.ViewModels.Event;
-    using LibraVerse.Common;
+    using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Events;
     using System.Linq;
     using System.Threading.Tasks;

@@ -8,7 +8,7 @@
     using LibraVerse.Core.Models.ViewModels.Book;
     using LibraVerse.Core.Models.ViewModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.Event;
-    using LibraVerse.Common;
+    using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Articles;
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.BookStores;
@@ -70,11 +70,9 @@
                 Author = bookForm.Author,
                 Description = bookForm.Description,
                 Pages = bookForm.Pages,
-                PublishingHouse = bookForm.PublishingHouse,
                 YearPublished = bookForm.YearPublished,
                 Price = bookForm.Price,
                 ImageUrl = bookForm.ImageUrl,
-                CoverTypeId = bookForm.CoverTypeId,
                 GenreId = bookForm.GenreId
             };
 
@@ -96,15 +94,12 @@
                 Author  = currentBook.Author,
                 Description= currentBook.Description,
                 Pages= currentBook.Pages,
-                PublishingHouse = currentBook.PublishingHouse,
                 YearPublished = currentBook.YearPublished,
                 Price = currentBook.Price,
                 ImageUrl = currentBook.ImageUrl,
-                CoverTypeId = currentBook.CoverTypeId,
                 GenreId = currentBook.GenreId
             };
 
-            bookForm.CoverTypes = await bookService.AllCoverTypesAsync();
             bookForm.Genres = await bookService.AllGenresAsync();
 
             return bookForm;
@@ -120,11 +115,9 @@
             book.Author = bookForm.Author;
             book.Description = bookForm.Description;
             book.Pages = bookForm.Pages;
-            book.PublishingHouse = bookForm.PublishingHouse;
             book.YearPublished = bookForm.YearPublished;
             book.Price = bookForm.Price;
             book.ImageUrl = bookForm.ImageUrl;
-            book.CoverTypeId = bookForm.CoverTypeId;
             book.GenreId = bookForm.GenreId;
 
             await repository.SaveChangesAsync();
@@ -303,7 +296,6 @@
         public async Task<BookQueryServiceModel> AllBooksToChooseAsync(
             int bookStoreId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -318,12 +310,6 @@
                     .Where(b => b.Genre.Name.ToLower() == genre.ToLower());
             }
 
-            if (coverType != null)
-            {
-                booksToShow = booksToShow
-                    .Where(b => b.CoverType.Name.ToLower() == coverType.ToLower());
-            }
-
             if (searchTerm != null)
             {
                 string normalizedSearchTerm = searchTerm.ToLower();
@@ -331,15 +317,11 @@
                 booksToShow = booksToShow
                 .Where(b => normalizedSearchTerm.Contains(b.Title.ToLower())
                 || normalizedSearchTerm.Contains(b.Author.ToLower())
-                || normalizedSearchTerm.Contains(b.PublishingHouse.ToLower())
                 || normalizedSearchTerm.Contains(b.Genre.Name.ToLower())
-                || normalizedSearchTerm.Contains(b.CoverType.Name.ToLower())
 
                 || b.Title.ToLower().Contains(normalizedSearchTerm)
                 || b.Author.ToLower().Contains(normalizedSearchTerm)
-                || b.PublishingHouse.ToLower().Contains(normalizedSearchTerm)
-                || b.Genre.Name.ToLower().Contains(normalizedSearchTerm)
-                || b.CoverType.Name.ToLower().Contains(normalizedSearchTerm));
+                || b.Genre.Name.ToLower().Contains(normalizedSearchTerm));
             }
 
             booksToShow = sorting switch
