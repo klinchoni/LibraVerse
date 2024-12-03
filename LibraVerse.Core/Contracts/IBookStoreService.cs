@@ -20,7 +20,6 @@
         Task<BookQueryServiceModel> AllBooksAsync(
             int bookStoreId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,

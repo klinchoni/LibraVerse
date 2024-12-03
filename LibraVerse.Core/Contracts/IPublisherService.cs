@@ -7,7 +7,7 @@ using LibraVerse.Core.Models.ViewModels.Event;
 using LibraVerse.Data.Models.Mappings;
 using LibraVerse.Data.Models.Roles;
 
-namespace NovelNest.Core.Contracts
+namespace LibraVerse.Core.Contracts
 {
     public interface IPublisherService
     {
@@ -33,7 +33,6 @@ namespace NovelNest.Core.Contracts
         Task<BookQueryServiceModel> AllBooksToChooseAsync(
             int bookStoreId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,

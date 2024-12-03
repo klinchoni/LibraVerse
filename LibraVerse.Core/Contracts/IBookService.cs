@@ -11,7 +11,6 @@
     {
         Task<BookQueryServiceModel> AllAsync(
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -26,17 +25,13 @@
 
         Task<IEnumerable<GenreViewModel>> AllGenresAsync();
         Task<IEnumerable<string>> AllGenresNamesAsync();
-        Task<IEnumerable<CoverTypeViewModel>> AllCoverTypesAsync();
-        Task<IEnumerable<string>> AllCoverTypesNamesAsync();
         Task<Book> FindBookByIdAsync(int bookId);
         Task<bool> BookExistsAsync(int bookId);
         Task<bool> GenreExistsAsync(int genreId);
-        Task<bool> CoverTypeExistsAsync(int coverTypeId);
         Task<BookViewModel> DetailsAsync(int bookId);
         Task<BookQueryServiceModel> AllWantToReadBooksIdsByUserIdAsync(
             string userId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
@@ -44,14 +39,12 @@
         Task<BookQueryServiceModel> AllCurrentlyReadingBooksIdsByUserIdAsync(
             string userId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
             int booksPerPage = 8);
         Task<BookQueryServiceModel> AllReadBooksIdsByUserIdAsync(string userId,
             string? genre = null,
-            string? coverType = null,
             string? searchTerm = null,
             BookSorting sorting = BookSorting.Newest,
             int currentPage = 1,
