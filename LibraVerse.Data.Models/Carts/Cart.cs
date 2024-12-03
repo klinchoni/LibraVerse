@@ -1,10 +1,11 @@
 ﻿namespace LibraVerse.Data.Models.Carts
 {
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.ComponentModel.DataAnnotations;
     using LibraVerse.Data.Models.Mappings;
     using LibraVerse.Data.Models.Roles;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Cart
     {
@@ -12,11 +13,11 @@
         public int Id { get; set; }
 
         [Required]
-        [Comment("The Identifier of the User")]
+        [Comment("The current User's Identifier")]
         public string UserId { get; set; } = null!;
 
         [ForeignKey(nameof(UserId))]
-        [Comment("The User")]
+        [Comment("The current User")]
         public ApplicationUser User { get; set; } = null!;
 
         public ICollection<BookCart> BooksCarts { get; set; } = new HashSet<BookCart>();
