@@ -1,5 +1,6 @@
 ﻿namespace LibraVerse.Data.Models.Roles
 {
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -7,15 +8,15 @@
     public class Publisher
     {
         [Key]
-        [Comment("The Identifier of the Publisher")]
+        [Comment("The current Publisher's Identifier")]
         public int Id { get; set; }
 
         [Required]
-        [Comment("The Identifier of the User")]
-        public string UserId { get; set; } 
+        [Comment("The current User's Identifier")]
+        public string UserId { get; set; } = null!;
 
         [ForeignKey(nameof(UserId))]
-        [Comment("The User")]
+        [Comment("The current User")]
         public ApplicationUser User { get; set; } = null!;
     }
 }
