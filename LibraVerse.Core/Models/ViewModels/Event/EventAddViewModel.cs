@@ -2,8 +2,8 @@
 {
     using LibraVerse.Core.Contracts;
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants;
-    using static LibraVerse.Data.Constants.DataConstants.EventConstants;
+    using static LibraVerse.Common.EntityValidationMessages.Data;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Event;
 
     public class EventAddViewModel : IEventModel
     {
