@@ -12,6 +12,9 @@
     @if (!Model.booksUserWantsToRead.Books.Any() || Model.booksUserWantsToRead == null)
     {
         <h4 class="text-center">Опс, тук няма нищо. Не сте добавили книги, които искате да прочетете. Можете да го направите сега. :)</h4>
+        <div class="text-center">
+            <a asp-controller="Book" asp-action="All" class="btn btn-primary btn-lg">Натисни и избери книга :)</a>
+        </div>
     }
     else
     {
