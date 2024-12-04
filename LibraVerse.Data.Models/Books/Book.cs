@@ -5,7 +5,6 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using static LibraVerse.Common.Constants.EntityValidationConstants.BookConstants;
-    using System;
 
     public class Book
     {
@@ -56,6 +55,5 @@
         public ICollection<BookBookStore> BooksBookStores { get; set; } = new HashSet<BookBookStore>();
         public ICollection<BookReview> Reviews { get; set; } = new HashSet<BookReview>();
         public ICollection<BookCart> BooksCarts { get; set; } = new HashSet<BookCart>();
-        public DateTime DateAdded { get; set; }
     }
 }

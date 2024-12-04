@@ -49,6 +49,5 @@
 
         public ICollection<EventParticipant> EventsParticipants { get; set; } = new HashSet<EventParticipant>();
         public ICollection<EventCart> EventsCarts { get; set; } = new HashSet<EventCart>();
-        public DateTime DateAdded { get; set; }
     }
 }
