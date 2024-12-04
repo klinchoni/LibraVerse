@@ -1,0 +1,65 @@
+﻿@model AllEventsQueryModel
+@inject IPublisherService publisherService
+
+@{
+    ViewBag.Title = "Всички Събития";
+}
+
+<h2 class="text-center mt-3">@ViewBag.Title</h2>
+<hr />
+
+@if (await publisherService.ExistsByUserIdAsync(User.Id()))
+{
+    <div class="text-center mb-4">
+        <a asp-controller="Publisher" asp-action="AddEvent" class="btn btn-primary btn-lg">Добави Събитие</a>
+    </div>
+}
+
+<form method="get">
+    <div class="row justify-content-center align-items-end">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label asp-for="SearchTerm"></label>
+                <input asp-for="SearchTerm" class="form-control" placeholder="Търси...">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label asp-for="Sorting"></label>
+                <select asp-for="Sorting" class="form-control">
+                    <option value="0">Всички</option>
+                    <option value="1">Цена (Възходяща)</option>
+                    <option value="2">Цена (Низходяща)</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label asp-for="Status"></label>
+                <select asp-for="Status" class="form-control">
+                    <option value="0">Всички</option>
+                    <option value="1">Предстоящи</option>
+                    <option value="2">Изминали</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <input type="submit" value="Търси" class="btn btn-success w-100" />
+        </div>
+    </div>
+</form>
+
+@if (!Model.Events.Any())
+{
+    <h2 class="text-center mt-5">Няма намерени събития!</h2>
+}
+else
+{
+    <div class="text-center mt-5">
+        @foreach (var currentEvent in Model.Events)
+        {
+            <partial name="_EventPartial" model="@currentEvent" />
+        }
+    </div>
+    <partial name="_EventPagesPartial" model="@Model" />
+}

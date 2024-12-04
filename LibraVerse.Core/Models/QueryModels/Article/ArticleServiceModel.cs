@@ -1,9 +1,9 @@
 ﻿namespace LibraVerse.Core.Models.QueryModels.Article
 {
-    using NovelNest.Core.Contracts;
+    using LibraVerse.Core.Contracts;
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants;
-    using static LibraVerse.Data.Constants.DataConstants.ArticleConstants;
+    using static LibraVerse.Common.EntityValidationMessages.Data;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Article;
 
     public class ArticleServiceModel : IArticleModel
     {

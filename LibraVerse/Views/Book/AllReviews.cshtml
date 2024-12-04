@@ -1,0 +1,104 @@
+﻿@model AllBookReviewsQueryModel
+
+@{
+    ViewBag.Title = "Всички Отзив";
+}
+
+@{
+    var review = Model.BookReviews.FirstOrDefault(r => r.UserId == User.Id());
+}
+
+@if (!Model.BookReviews.Any())
+{
+    <h2 class="text-center">Няма намерени отзиви за "@Model.BookTitle!"</h2>
+    <div class="text-center mb-2 mt-4">
+        <a asp-controller="Book" asp-action="AddReview" asp-route-id="@Model.BookId" class="btn btn-success btn-lg">Добави Отзив</a>
+    </div>
+    <div class="text-center mb-2 mt-2">
+        <a asp-controller="Book" asp-action="Details" asp-route-id="@Model.BookId" asp-route-information="@Model.BookInfo" class="btn btn-warning btn-lg">Върни се към Книгата</a>
+    </div>
+}
+else
+{
+    <div class="text-center mb-2 mt-2">
+        <a asp-controller="Book" asp-action="Details" asp-route-id="@Model.BookId" asp-route-information="@Model.BookInfo" class="btn btn-warning btn-lg">Върни се към Книгата</a>
+    </div>
+    <hr />
+
+    <h2 class="text-center">Всички отзиви за "@Model.BookTitle!"</h2>
+    <h3 class="text-center mb-4 mt-4">Средна оценка: @Model.BookReviews.Average(br => br.Rate)</h3>
+
+    <form method="get">
+        <div class="row justify-content-center">
+            <div class="form-group col-md-3">
+                <label asp-for="SearchTerm"></label>
+                <input asp-for="SearchTerm" class="form-control" placeholder="Търси...">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label asp-for="Sorting"></label>
+                <select asp-for="Sorting" class="form-control">
+                    <option value="0">Най-скоро добавени</option>
+                    <option value="1">Най-късно добавени</option>
+                    <option value="2">Оценка (Възходяща)</option>
+                    <option value="3">Оценка (Низходяща)</option>
+                </select>
+            </div>
+
+            <div class="col-md-1 d-flex align-items-end">
+                <input type="submit" value="Търси" class="btn btn-success w-100" />
+            </div>
+        </div>
+    </form>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1 mt-5">
+    @if (review == null)
+    {
+            <h2 class="text-center">Моят Отзив</h2>
+        <div class="text-center mb-4 mt-4">
+                <a asp-controller="Book" asp-action="AddReview" asp-route-id="@Model.BookId" class="btn btn-primary btn-lg">Добави Отзив</a>
+        </div>
+
+            if (Model.BookReviews.Count() == 0)
+            {
+                <h4 class="text-center">За момента никой друг не е добавял отзив за тази книга!</h4>
+            }
+            else
+            {
+                <h2 class="text-center">Други Отзиви</h2>
+                @foreach (var currentReview in Model.BookReviews)
+                {
+                    @if (currentReview.UserId == User.Id())
+                    {
+                        continue;
+                    }
+                    <partial name="_BookReviewPartial" model="@currentReview" />
+                }
+                <partial name="_BookReviewPagesPartial" model="@Model" />
+            }
+    }
+    else
+    {
+            <h2 class="text-center">Моят Отзив</h2>
+        <partial name="_BookReviewPartial" model="@review" />
+
+        if (Model.BookReviews.Count() == 1)
+        {
+             <h4 class="text-center">За момента никой друг не е добавял отзив за тази книга!</h4>
+        }
+        else
+        {
+                <h2 class="text-center">Други Отзиви</h2>
+            @foreach (var currentReview in Model.BookReviews)
+            {
+                @if (currentReview.UserId == User.Id())
+                {
+                    continue;
+                }
+                <partial name="_BookReviewPartial" model="@currentReview" />
+            }
+            <partial name="_BookReviewPagesPartial" model="@Model" />
+        }
+    }
+    </div>
+}

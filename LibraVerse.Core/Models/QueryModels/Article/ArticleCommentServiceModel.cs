@@ -1,8 +1,8 @@
 ﻿namespace LibraVerse.Core.Models.QueryModels.Article
 {
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants;
-    using static LibraVerse.Data.Constants.DataConstants.ArticleCommentConstants;
+    using static LibraVerse.Common.EntityValidationMessages.Data;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.ArticleComment;
     public class ArticleCommentServiceModel
     {
         public int Id { get; set; }

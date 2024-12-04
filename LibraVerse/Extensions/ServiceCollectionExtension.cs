@@ -4,7 +4,7 @@
     using Microsoft.EntityFrameworkCore;
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Services;
-    using LibraVerse.Infrastructure.Common;
+    using LibraVerse.Data.Repository;
     using LibraVerse.Data;
     using LibraVerse.Data.Models.Roles;
 
@@ -27,7 +27,7 @@
         {
             var connectionString = config.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<NovelNestDbContext>(options =>
+            services.AddDbContext<LibraDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             services.AddScoped<IRepository, Repository>();
@@ -47,7 +47,7 @@
                 options.Password.RequireUppercase = false;
             })
                 .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<NovelNestDbContext>();
+                .AddEntityFrameworkStores<LibraDbContext>();
 
             return services;
         }

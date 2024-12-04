@@ -3,7 +3,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using LibraVerse.Core.Contracts;
-    using NovelNest.Core.Extensions;
+    using LibraVerse.Core.Extensions;
     using LibraVerse.Core.Models.QueryModels.Article;
     using LibraVerse.Core.Models.ViewModels.Article;
     using System.Security.Claims;

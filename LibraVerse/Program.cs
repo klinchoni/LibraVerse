@@ -1,32 +1,33 @@
-using LibraVerse.Data;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using LibraVerse.ModelBinders;
+using LibraVerse.Core.Contracts;
+using LibraVerse.Core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-// Register LibraDbContext with the connection string
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-// Add services to the container.
-builder.Services.AddDbContext<LibraDbContext>(options =>
-    options.UseSqlServer(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddApplicationDbContext(builder.Configuration);
+builder.Services.AddApplicationIdentity(builder.Configuration);
 
-// Register Identity services with LibraDbContext
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<LibraDbContext>();  // Use LibraDbContext instead of ApplicationDbContext
+builder.Services.AddControllersWithViews(options =>
+{
+    options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
+    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+});
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddApplicationServices();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseMigrationsEndPoint();
 }
 else
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Home/Error/500");
+    app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
     app.UseHsts();
 }
 
@@ -35,11 +36,38 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+        );
+    endpoints.MapControllerRoute(
+        name: "Book Details",
+        pattern: "/Book/Details/{id}/{information}",
+        defaults: new { Controller = "Book", Action = "Details" }
+        );
+    endpoints.MapControllerRoute(
+        name: "Article Details",
+        pattern: "/Article/Details/{id}/{information}",
+        defaults: new { Controller = "Article", Action = "Details" }
+        );
+    endpoints.MapControllerRoute(
+        name: "Event Details",
+        pattern: "/Event/Details/{id}/{information}",
+        defaults: new { Controller = "Event", Action = "Details" }
+        );
+    endpoints.MapControllerRoute(
+        name: "BookStore Details",
+        pattern: "/BookStore/Details/{id}/{information}",
+        defaults: new { Controller = "BookStore", Action = "Details" }
+        );
+    endpoints.MapDefaultControllerRoute();
+    endpoints.MapRazorPages();
+});
 
-app.Run();
+await app.CreateAdminRoleAsync();
+await app.RunAsync();

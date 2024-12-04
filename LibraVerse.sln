@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse", "LibraVerse\LibraVerse.csproj", "{DF824128-8A0E-4194-AD67-797008BB2395}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Web.ViewModels", "LibraVerse.Web.ViewModels\LibraVerse.Web.ViewModels.csproj", "{E56A056B-9364-49F9-838C-56DD04C04630}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Common", "LibraVerse.Common\LibraVerse.Common.csproj", "{7607D847-FA30-474B-B97B-A586DB8783F0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Data.Models", "LibraVerse.Data.Models\LibraVerse.Data.Models.csproj", "{868ECE40-F05E-47D1-A5FC-47E43AA5DC77}"
@@ -17,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LibraVerse.Data", "LibraVer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraVerse.Data", "LibraVerse.Data\LibraVerse.Data.csproj", "{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Core", "LibraVerse.Core\LibraVerse.Core.csproj", "{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraVerse.Core", "LibraVerse.Core\LibraVerse.Core.csproj", "{A108A13C-1812-45CD-95B1-BB1488004ECF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		{DF824128-8A0E-4194-AD67-797008BB2395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF824128-8A0E-4194-AD67-797008BB2395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF824128-8A0E-4194-AD67-797008BB2395}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E56A056B-9364-49F9-838C-56DD04C04630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E56A056B-9364-49F9-838C-56DD04C04630}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E56A056B-9364-49F9-838C-56DD04C04630}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E56A056B-9364-49F9-838C-56DD04C04630}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7607D847-FA30-474B-B97B-A586DB8783F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7607D847-FA30-474B-B97B-A586DB8783F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7607D847-FA30-474B-B97B-A586DB8783F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,17 +39,16 @@ Global
 		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1EC998A-B1B9-46D6-90BB-111ECE7A60D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A108A13C-1812-45CD-95B1-BB1488004ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A108A13C-1812-45CD-95B1-BB1488004ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A108A13C-1812-45CD-95B1-BB1488004ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A108A13C-1812-45CD-95B1-BB1488004ECF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DF824128-8A0E-4194-AD67-797008BB2395} = {C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}
-		{E56A056B-9364-49F9-838C-56DD04C04630} = {C7511B0F-EA4A-4A1B-8FA2-5B89F2E16970}
 		{868ECE40-F05E-47D1-A5FC-47E43AA5DC77} = {DD9CE143-4078-4919-98EA-A97AE3F57AD9}
 		{317AF6CF-5CD3-4BDC-B439-A3C864547E9F} = {DD9CE143-4078-4919-98EA-A97AE3F57AD9}
 	EndGlobalSection

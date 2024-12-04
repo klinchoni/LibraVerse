@@ -1,6 +1,6 @@
 ﻿namespace System.Security.Claims
 {
-    using static LibraVerse.Core.Constants.AdminConstants;
+    using static LibraVerse.Common.AdminConstants;
 
     public static class ClaimsPrincipalExtensions
     {

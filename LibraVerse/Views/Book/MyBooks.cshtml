@@ -1,0 +1,133 @@
+﻿@model AllBookCollectionsModel
+
+@{
+    ViewBag.Title = "Моите Книги";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="text-center mt-4 mb-3">@ViewBag.Title</h2>
+<hr />
+
+<div class="col mb-4">
+    @if (!Model.booksUserWantsToRead.Books.Any() || Model.booksUserWantsToRead == null)
+    {
+        <h4 class="text-center">Опс, тук няма нищо. Не сте добавили книги, които искате да прочетете. Можете да го направите сега. :)</h4>
+    }
+    else
+    {
+        <h2 class="text-center mt-4 mb-3">Книги, които искам да прочета:</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-5">
+            @foreach (var book in Model.booksUserWantsToRead.Books.OrderByDescending(m => m.Id).Take(4).Select((value, index) => new { Value = value, Index = index }))
+            {
+                <div class="col mb-4
+                    @if (book.Index == 3)
+                    {
+                        <text>overlay-white</text>
+                    }">
+                    <div class="card h-100 text-center">
+                        <img class="card-img-top" src="@book.Value.ImageUrl" alt="Book Image">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>@book.Value.Title</strong></h4>
+                            <p class="card-text"><strong>Автор:</strong> @book.Value.Author</p>
+                        </div>
+                        <a asp-controller="Book" asp-action="DetailsWantToRead" asp-route-id="@book.Value.Id" class="btn btn-warning mb-1 w-100 p-3 fw-bold">Виж още</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center">
+            <a asp-controller="Book" asp-action="WantToRead" class="btn btn-primary btn-lg">Виж Всички</a>
+        </div>
+    }
+</div>
+
+<hr />
+
+<div class="col mb-4">
+    @if (!Model.booksUserCurrentlyReading.Books.Any() || Model.booksUserCurrentlyReading == null)
+    {
+        <h4 class="text-center">Забравихте ли да добавите книгите, които в момента четете? :О</h4>
+    }
+    else
+    {
+        <h2 class="text-center mt-4 mb-3">В момента чета:</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-5">
+            @foreach (var book in Model.booksUserCurrentlyReading.Books.OrderByDescending(m => m.Id).Take(4).Select((value, index) => new { Value = value, Index = index }))
+            {
+                <div class="col mb-4
+                    @if (book.Index == 3)
+                    {
+                        <text>overlay-white</text>
+                    }">
+                    <div class="card h-100 text-center">
+                        <img class="card-img-top" src="@book.Value.ImageUrl" alt="Book Image">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>@book.Value.Title</strong></h4>
+                            <p class="card-text"><strong>Автор:</strong> @book.Value.Author</p>
+                        </div>
+                        <a asp-controller="Book" asp-action="DetailsCurrentlyReading" asp-route-id="@book.Value.Id" class="btn btn-warning mb-1 w-100 p-3 fw-bold">Виж Повече</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center">
+            <a asp-controller="Book" asp-action="CurrentlyReading" class="btn btn-primary btn-lg">Виж Всички</a>
+        </div>
+    }
+</div>
+
+<hr />
+
+<div class="col mb-4">
+    @if (!Model.booksUserRead.Books.Any() || Model.booksUserRead == null)
+    {
+        <h4 class="text-center">Наистина ли все още не сте прочели никоя от уникалните ни книги? ;).</h4>
+    }
+    else
+    {
+        <h2 class="text-center mt-4 mb-3">Прочетени книги:</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 mt-5">
+            @foreach (var book in Model.booksUserRead.Books.OrderByDescending(m => m.Id).Take(4).Select((value, index) => new { Value = value, Index = index }))
+            {
+                <div class="col mb-4
+                    @if (book.Index == 3)
+                    {
+                        <text>overlay-white</text>
+                    }">
+                    <div class="card h-100 text-center">
+                        <img class="card-img-top" src="@book.Value.ImageUrl" alt="Book Image">
+                        <div class="card-body">
+                            <h4 class="card-title"><strong>@book.Value.Title</strong></h4>
+                            <p class="card-text"><strong>Автор:</strong> @book.Value.Author</p>
+                        </div>
+                        <a asp-controller="Book" asp-action="DetailsRead" asp-route-id="@book.Value.Id" class="btn btn-warning mb-1 w-100 p-3 fw-bold">Виж Повече</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center">
+            <a asp-controller="Book" asp-action="Read" class="btn btn-primary btn-lg">Виж Всички</a>
+        </div>
+    }
+</div>
+
+<style>
+    .overlay-white {
+        position: relative;
+    }
+
+        .overlay-white::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.7;
+            z-index: 1;
+        }
+</style>

@@ -17,11 +17,7 @@ namespace LibraVerse.Core.Models.ViewModels.Book
 
         public int Pages { get; set; }
 
-        public string PublishingHouse { get; set; } = null!;
-
         public int YearPublished { get; set; }
-
-        public string CoverType { get; set; } = null!;
 
         public decimal Price { get; set; }
 

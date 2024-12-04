@@ -2,7 +2,7 @@
 {
     using Microsoft.AspNetCore.Identity;
     using LibraVerse.Data.Models.Roles;
-    using static LibraVerse.Core.Constants.AdminConstants;
+    using static LibraVerse.Common.AdminConstants;
 
     public static class ApplicationBuilderExtensions
     {

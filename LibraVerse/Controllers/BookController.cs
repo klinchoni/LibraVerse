@@ -27,7 +27,6 @@
         {
             var allBooks = await bookService.AllAsync(
                 model.Genre,
-                model.CoverType,
                 model.SearchTerm,
                 model.Sorting,
                 model.CurrentPage,
@@ -36,7 +35,6 @@
             model.TotalBooksCount = allBooks.TotalBooksCount;
             model.Books = allBooks.Books;
             model.Genres = await bookService.AllGenresNamesAsync();
-            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
 
             return View(model);
         }
@@ -78,7 +76,7 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> Mine(string id, [FromQuery] AllBooksQueryModel model)
+        public async Task<IActionResult> MyBooks(string id, [FromQuery] AllBooksQueryModel model)
         {
             var userId = User.Id();
 
@@ -90,13 +88,13 @@
             var bookCollections = new AllBookCollectionsModel()
             {
                 booksUserWantsToRead = await bookService.AllWantToReadBooksIdsByUserIdAsync(
-                userId, model.Genre, model.CoverType, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage),
+                userId, model.Genre, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage),
 
                 booksUserCurrentlyReading = await bookService.AllCurrentlyReadingBooksIdsByUserIdAsync(
-                    userId, model.Genre, model.CoverType, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage),
+                    userId, model.Genre, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage),
 
                 booksUserRead = await bookService.AllReadBooksIdsByUserIdAsync(
-                    userId, model.Genre, model.CoverType, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage)
+                    userId, model.Genre, model.SearchTerm, model.Sorting, model.CurrentPage, model.BooksPerPage)
             };
 
             return View(bookCollections);
@@ -146,7 +144,6 @@
             var allBooks = await bookService.AllWantToReadBooksIdsByUserIdAsync(
                 userId,
                 model.Genre,
-                model.CoverType,
                 model.SearchTerm,
                 model.Sorting,
                 model.CurrentPage,
@@ -155,7 +152,6 @@
             model.TotalBooksCount = allBooks.TotalBooksCount;
             model.Books = allBooks.Books;
             model.Genres = await bookService.AllGenresNamesAsync();
-            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
 
             return View(model);
         }
@@ -168,7 +164,6 @@
             var allBooks = await bookService.AllCurrentlyReadingBooksIdsByUserIdAsync(
                 userId,
                 model.Genre,
-                model.CoverType,
                 model.SearchTerm,
                 model.Sorting,
                 model.CurrentPage,
@@ -177,7 +172,6 @@
             model.TotalBooksCount = allBooks.TotalBooksCount;
             model.Books = allBooks.Books;
             model.Genres = await bookService.AllGenresNamesAsync();
-            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
 
             return View(model);
         }
@@ -190,7 +184,6 @@
             var allBooks = await bookService.AllReadBooksIdsByUserIdAsync(
                 userId,
                 model.Genre,
-                model.CoverType,
                 model.SearchTerm,
                 model.Sorting,
                 model.CurrentPage,
@@ -199,7 +192,6 @@
             model.TotalBooksCount = allBooks.TotalBooksCount;
             model.Books = allBooks.Books;
             model.Genres = await bookService.AllGenresNamesAsync();
-            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
 
             return View(model);
         }
@@ -220,7 +212,7 @@
 
 
             await bookService.AddWantToReadBookAsync(id, userId);
-            return RedirectToAction(nameof(Mine), new { id = userId });
+            return RedirectToAction(nameof(MyBooks), new { id = userId });
         }
 
         [HttpGet]
@@ -238,7 +230,7 @@
             }
 
             await bookService.AddCurrentlyReadingBookAsync(id, userId);
-            return RedirectToAction(nameof(Mine), new { id = userId });
+            return RedirectToAction(nameof(MyBooks), new { id = userId });
         }
 
         [HttpGet]
@@ -259,7 +251,7 @@
 
             if (await bookService.FindBookReviewAsync(User.Id(), id) != null)
             {
-                return RedirectToAction(nameof(Mine), new { id = userId });
+                return RedirectToAction(nameof(MyBooks), new { id = userId });
             }
 
             return RedirectToAction(nameof(BookReviewQuestion), new { id });
@@ -514,7 +506,7 @@
                 {
                     return RedirectToAction(nameof(BookReviewQuestion), new { id });
                 }
-                return RedirectToAction(nameof(Mine), new { id = User.Id() });
+                return RedirectToAction(nameof(MyBooks), new { id = User.Id() });
             }
 
             await bookService.ChangePagePostAsync(changePageForm);

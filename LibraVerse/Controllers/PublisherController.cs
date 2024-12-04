@@ -42,7 +42,6 @@
             var bookForm = new BookAddViewModel()
             {
                 Genres = await bookService.AllGenresAsync(),
-                CoverTypes = await bookService.AllCoverTypesAsync(),
             };
 
             return View(bookForm);
@@ -60,15 +59,10 @@
             {
                 ModelState.AddModelError(nameof(bookForm.GenreId), "Genre does not exist!");
             }
-            else if (await bookService.CoverTypeExistsAsync(bookForm.CoverTypeId) == false)
-            {
-                ModelState.AddModelError(nameof(bookForm.CoverTypeId), "Cover Type does not exist!");
-            }
 
             if (!ModelState.IsValid)
             {
                 bookForm.Genres = await bookService.AllGenresAsync();
-                bookForm.CoverTypes = await bookService.AllCoverTypesAsync();
                 return View(bookForm);
             }
 
@@ -109,7 +103,6 @@
             if (!ModelState.IsValid)
             {
                 bookForm.Genres = await bookService.AllGenresAsync();
-                bookForm.CoverTypes = await bookService.AllCoverTypesAsync();
 
                 return View(bookForm);
             }
@@ -280,7 +273,6 @@
             var allBooks = await publisherService.AllBooksToChooseAsync(
                 id,
                 model.Genre,
-                model.CoverType,
                 model.SearchTerm,
                 model.Sorting,
                 model.CurrentPage,
@@ -290,7 +282,6 @@
             model.Books = allBooks.Books;
             model.BookStoreId = id;
             model.Genres = await bookService.AllGenresNamesAsync();
-            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
 
             return View(model);
         }

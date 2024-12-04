@@ -1,7 +1,7 @@
 ﻿namespace LibraVerse.Core.Models.ViewModels.Admin
 {
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants.PublisherConstants;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Publisher;
 
     public class UserViewModel
     {

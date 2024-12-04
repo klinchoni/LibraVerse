@@ -1,8 +1,8 @@
 ﻿namespace LibraVerse.Core.Models.ViewModels.Book
 {
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants;
-    using static LibraVerse.Data.Constants.DataConstants.BookCurrentlyReadingConstants;
+    using static LibraVerse.Common.EntityValidationMessages.Data;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.BookCurrentlyReadingConstants;
 
     public class ChangePageViewModel
     {

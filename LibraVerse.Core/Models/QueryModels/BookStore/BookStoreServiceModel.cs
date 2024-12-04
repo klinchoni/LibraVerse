@@ -1,9 +1,9 @@
 ﻿namespace LibraVerse.Core.Models.QueryModels.BookStore
 {
-    using NovelNest.Core.Contracts;
+    using LibraVerse.Core.Contracts;
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants;
-    using static LibraVerse.Data.Constants.DataConstants.BookStoreConstants;
+    using static LibraVerse.Common.EntityValidationMessages.Data;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.BookStore;
     public class BookStoreServiceModel : IBookStoreModel
     {
         public int Id { get; set; }

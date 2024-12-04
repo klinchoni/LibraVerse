@@ -1,7 +1,7 @@
 ﻿namespace LibraVerse.Core.Models.ViewModels.Book
 {
     using System.ComponentModel.DataAnnotations;
-    using static LibraVerse.Data.Constants.DataConstants.GenreConstants;
+    using static LibraVerse.Common.Constants.EntityValidationConstants.Genre;
 
     public class GenreViewModel
     {

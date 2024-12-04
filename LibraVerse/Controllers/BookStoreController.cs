@@ -60,7 +60,6 @@
             var allBooks = await bookStoreService.AllBooksAsync(
                 id,
                 model.Genre,
-                model.CoverType,
                 model.SearchTerm,
                 model.Sorting,
                 model.CurrentPage,
@@ -70,7 +69,6 @@
             model.Books = allBooks.Books;
             model.BookStoreId = id;
             model.Genres = await bookService.AllGenresNamesAsync();
-            model.CoverTypes = await bookService.AllCoverTypesNamesAsync();
 
             return View(model);
         }
