@@ -276,7 +276,7 @@
                 UserId = "c4fbe2f71-126f-46c3-af99-8dc035eac772"
             };
 
-            RandomUser2.PasswordHash = hasher.HashPassword(GuestUser, "Yonni_05");
+            RandomUser2.PasswordHash = hasher.HashPassword(GuestUser, "yonni_05");
         }
 
         private void SeedPublisher()
