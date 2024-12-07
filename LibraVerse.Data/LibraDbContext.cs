@@ -66,7 +66,6 @@
                 .Property(b => b.TicketPrice)
             .HasPrecision(18, 2);
 
-            //Configuration (Data Seeding)
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new UserClaimsConfiguration());
             builder.ApplyConfiguration(new PublisherConfiguration());
