@@ -36,6 +36,9 @@
         //The Role
         private Publisher publisher;
 
+        // The Users list
+        private List<ApplicationUser> users;
+
         [SetUp]
         public async Task Setup()
         {
@@ -119,6 +122,11 @@
         {
             await this.dbContext.Database.EnsureDeletedAsync();
             await this.dbContext.DisposeAsync();
+            if (userManager == null)
+            {
+                return;
+            }
+            userManager.Dispose();
         }
 
         [Test]

@@ -107,6 +107,20 @@ namespace LibraVerse.Services.Test
             {
                 await this.dbContext.Database.EnsureDeletedAsync();
                 await this.dbContext.DisposeAsync();
+
+                if (userManager == null)
+                {
+                    return;
+                }
+                userManager.Dispose();
+
+
+                if (roleManager == null)
+                {
+                    return;
+                }
+
+                roleManager.Dispose();
             }
 
             [Test]
