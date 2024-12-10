@@ -8,8 +8,7 @@
     var bookStores = Model.ToList();
 }
 
-<link href="~/path-to-extracted-theme/css/style.css" rel="stylesheet" />
-<!-- Може да се наложи да коригирате пътя до CSS файла от темата -->
+<link href="~/assets/css/main.css" rel="stylesheet" />
 
 <div class="container">
     <!-- Header Section -->
@@ -99,23 +98,23 @@
         <section id="welcome-section" class="d-flex align-items-center">
             <div class="container text-center position-relative" data-aos="fade-up" data-aos-delay="200">
                 <img src="~/assets/img/welcome.png" alt="Welcome Image" style="width: 300px;">
-                <h2 class="text-light">Добре дошли обратно, @UserManager.GetUserName(User)!</h2>
-                <p class="text-light">Продължете вашето приключение с нови книги, статии и събития.</p>
+                <h2 class="text-dark">Добре дошли обратно, @UserManager.GetUserName(User)!</h2>
+                <p class="text-dark">Продължете вашето приключение с нови книги, статии и събития.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <i class="bi bi-book-half display-3 text-primary"></i>
-                        <h5 class="text-light">Нови книги</h5>
-                        <p class="text-light">Открийте най-новите заглавия в нашата библиотека.</p>
+                        <h5 class="text-dark">Нови книги</h5>
+                        <p class="text-dark">Открийте най-новите заглавия в нашата библиотека.</p>
                     </div>
                     <div class="col-md-4">
                         <i class="bi bi-journal-text display-3 text-primary"></i>
-                        <h5 class="text-light">Свежи статии</h5>
-                        <p class="text-light">Прочетете последните статии и новини.</p>
+                        <h5 class="text-dark">Свежи статии</h5>
+                        <p class="text-dark">Прочетете последните статии и новини.</p>
                     </div>
                     <div class="col-md-4">
                         <i class="bi bi-calendar-event display-3 text-primary"></i>
-                        <h5 class="text-light">Бъдещи събития</h5>
-                        <p class="text-light">Запишете се за предстоящи събития и срещи.</p>
+                        <h5 class="text-dark">Бъдещи събития</h5>
+                        <p class="text-dark">Запишете се за предстоящи събития и срещи.</p>
                     </div>
                 </div>
                 <a class="btn btn-primary btn-lg mt-3" href="#" role="button">Започнете да четете</a>

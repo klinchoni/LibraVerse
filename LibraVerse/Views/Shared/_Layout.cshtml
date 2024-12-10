@@ -40,10 +40,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
-                    @await Component.InvokeAsync(nameof(MainMenuComponent))
+                    
                     <ul class="navbar-nav me-auto">
                         @if (SignInManager.IsSignedIn(User))
                         {
+                            @await Component.InvokeAsync(nameof(MainMenuComponent))
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Book" asp-action="MyBooks" asp-route-id="@UserManager.GetUserId(User)">Моите Книги</a>
                             </li>
@@ -53,6 +54,7 @@
                         }
                         @if (User.IsAdmin())
                         {
+                            @await Component.InvokeAsync(nameof(MainMenuComponent))
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="All" title="Admin">Действия</a>
                             </li>
