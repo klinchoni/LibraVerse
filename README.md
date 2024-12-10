@@ -21,16 +21,41 @@ Publishers enjoy the same privileges as users, with the added authority to manag
 Admins hold the same permissions as publishers but with additional administrative capabilities within the "Actions" section. This unique section grants admins the ability to elevate users to the role of publisher or admin and to revoke such statuses when necessary. This ensures a robust and dynamic management structure, enabling the seamless promotion and demotion of users within the platform.
 
 ## 💀Unauthenticated users💀
-They can see the Home page of the application, displaying the purpose of the platform.
+They can see the Home, Register and Login pages of the application, displaying the purpose of the platform.
+
+## 🏛️ Project Structure 🏛️
+-LibraVerse.Web: Web application, including controllers and views.
+-LibraVerse.Data: Database context (configurations, data seeding, repository) and migrations.
+-LibraVerse.Core: Core models and business logic, Services providing application functionality.
+-LibraVerse.Tests: Tests for various application components (services).
+
 # 👨🏻‍💻🦾💡 Technologies
 - C#
 - .NET 8
 - ASP.NET Core MVC
 - Entity Framework Core
-- CSS
+- Microsoft SQL Server
 - HTML
+- CSS
 - JavaScript
 - NUnit
 
+## 🧩Installation Requirements🧩
+- 🌐  .NET 8.0 SDK or later
+- 📶  SQL Server or another compatible database
+- </> Visual Studio 2022 or later
+  
+### ✔️ Installation and Usage Instructions✔️ 
+1. Clone the repository.
+2. Database setup:
+  - Create a new database in SQL Server.
+  - Update the appsettings.json file with the correct database connection settings.
+3. Apply migrations:
+  - dotnet ef database update
+    OR
+  - Add-Migration InitialDbCreate (in Package Manager Console) after that Update-Database (in Package Manager Console)                              
+4. Run the application
+  - Open a browser and navigate to http://localhost:5000 to see the application in action.
+    
 # 🔰 License
 This project is licensed under the MIT license - see the LICENSE.md file for details.
