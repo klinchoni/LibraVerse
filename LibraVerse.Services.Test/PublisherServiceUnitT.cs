@@ -410,7 +410,7 @@
 
             // Act
             await publisherService.AddBookAsync(addForm);
-            var currentBook = await bookService.FindBookByIdAsync(6);
+            var currentBook = await bookService.FindBookByIdAsync(2);
 
             //Assert
             Assert.That(currentBook.Title, Is.EqualTo ("A Slavonic-bulgarian history"));
@@ -879,11 +879,11 @@
         {
             // Act
             var result = publisherService.AllBooksToChooseAsync(1, "Adventure").Result;
-            var resultTwo = publisherService.AllBooksToChooseAsync(1, "ClassicLiterature").Result;
+            var resultTwo = publisherService.AllBooksToChooseAsync(1, "History").Result;
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 4, Is.True);
+            Assert.That(result.Books.First().Id == 1, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -899,7 +899,7 @@
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 2, Is.True);
+            Assert.That(result.Books.First().Id == 1, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -920,7 +920,7 @@
 
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
-            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
+            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
             Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3, 2 }));
         }
 
@@ -996,7 +996,7 @@
 
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
-            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
+            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(3));
             Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3, 2 }));
         }
 
