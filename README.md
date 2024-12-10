@@ -1,7 +1,7 @@
 # ♡₊˚ 🦢・₊✧💻LibraVerse - The Universe of books
 Welcome to **LibraVerse**, your mindful book place application built on **ASP.NET Core MVC**! **LibraVerse** is a platform for managing books, reviews, articles, and events. It allows users to search for books, read and write reviews, cooments and stay informed about upcoming book-related events.
 
-# 📖 Features
+# 🤩📖 Features
 🏬**Bookstore:** *Explore a wide range of books ready for purchase. Easily find your next favorite read.* <br>
 📜**Articles:** *Engage with fascinating articles dedicated solely to book-related themes. Keep up with the latest and most exciting news in the literary world.* <br>
 📣**Events:** *Uncover and join events designed for book enthusiasts. Enjoy discussions, signings, and meetups centered around your favorite books.* <br>
