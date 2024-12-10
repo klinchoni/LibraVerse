@@ -1,5 +1,4 @@
 # ♡₊˚ 🦢・₊✧💻LibraVerse - The Universe of books
-This is educational Web Project for ASP.NET Advanced course in SoftUni.
 Welcome to **LibraVerse**, your mindful book place application built on **ASP.NET Core MVC**! **LibraVerse** is a platform for managing books, reviews, articles, and events. It allows users to search for books, read and write reviews, cooments and stay informed about upcoming book-related events.
 
 ## 📖 Features
