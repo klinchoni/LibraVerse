@@ -44,21 +44,18 @@ They can see the Home page of the application, displaying the purpose of the pla
 - 🌐  .NET 8.0 SDK or later
 - 📶  SQL Server or another compatible database
 - </> Visual Studio 2022 or later
-- 
-### ✔️ Installation and Usage Instructions✔️ 
-- Clone the repository:
-git clone https://github.com/yourusername/LibraVerse.git
-
-- Database setup:
-  -- Create a new database in SQL Server.
-  -- Update the appsettings.json file with the correct database connection settings.
   
--Apply migrations:
-    dotnet ef database update | Add-Migration InitialDbCreate (in Package Manager Console)
-                                Update-Database (in Package Manager Console)
-                                
--Run the application
-
-Open a browser and navigate to http://localhost:5000 to see the application in action.
+### ✔️ Installation and Usage Instructions✔️ 
+1. Clone the repository.
+2. Database setup:
+  - Create a new database in SQL Server.
+  - Update the appsettings.json file with the correct database connection settings.
+3. Apply migrations:
+  - dotnet ef database update
+    OR
+  - Add-Migration InitialDbCreate (in Package Manager Console) after that Update-Database (in Package Manager Console)                              
+4.Run the application
+  - Open a browser and navigate to http://localhost:5000 to see the application in action.
+  - 
 # 🔰 License
 This project is licensed under the MIT license - see the LICENSE.md file for details.
