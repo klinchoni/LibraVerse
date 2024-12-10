@@ -8,7 +8,7 @@ Welcome to **LibraVerse**, your mindful book place application built on **ASP.NE
 🧋+📚**Collections:** *Manage your reading adventure with custom collections. Track your "Want to Read", "Currently Reading", and "Read" books for a tailored bookshelf experience.* <br>
 ⭐⭐⭐⭐⭐**Reviews and Ratings:** *Express your opinions on books by writing reviews and giving ratings from 1 to 10. Help the community by guiding others to literary treasures.* <br>
 
-###Enjoy reading with LibraVerse, where our goal is to make your reading experience relaxing, enjoyable, and uniquely comfortable!
+### Enjoy reading with LibraVerse, where our goal is to make your reading experience relaxing, enjoyable, and uniquely comfortable!
 
 ## 💻 Technologies
 - C#
