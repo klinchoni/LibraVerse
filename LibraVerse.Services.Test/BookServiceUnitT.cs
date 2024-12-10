@@ -125,13 +125,13 @@ namespace LibraVerse.Services.Test
             History = new Genre()
             {
                 Id = 2,
-                Name = "Historiography"
+                Name = "History"
             };
 
             Historiography = new Genre()
             {
                 Id = 3,
-                Name = "History"
+                Name = "Historiography"
             };
 
             Art = new Genre()
@@ -216,7 +216,7 @@ namespace LibraVerse.Services.Test
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 3, Is.True);
+            Assert.That(result.Books.First().Id == 2, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -334,7 +334,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() {  3, 1, 5, 4, 2 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 1, 5, 4, 2 }));
         }
 
         [Test]
@@ -456,8 +456,8 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(result.Count(), Is.EqualTo(4));
             Assert.That(result.First().Name, Is.EqualTo("Adventure"));
-            Assert.That(result.Skip(1).First().Name, Is.EqualTo("Historiography"));
-            Assert.That(result.Skip(2).First().Name, Is.EqualTo("History"));
+            Assert.That(result.Skip(1).First().Name, Is.EqualTo("History"));
+            Assert.That(result.Skip(2).First().Name, Is.EqualTo("Historiography"));
             Assert.That(result.Skip(3).First().Name, Is.EqualTo("Art"));
         }
 
@@ -466,7 +466,7 @@ namespace LibraVerse.Services.Test
         {
             // Act
             var result = await service.AllGenresNamesAsync();
-            var expectedResult = new List<string>() { "Adventure", "Historiography", "History", "Art" };
+            var expectedResult = new List<string>() { "Adventure", "History", "Historiography", "Art" };
 
             // Assert
             Assert.That(result.Count(), Is.EqualTo(4));
@@ -837,12 +837,12 @@ namespace LibraVerse.Services.Test
         public async Task Test_AllCurrentlyReadingBooksIdsByUserIdAsync_FiltersByGenre()
         {
             // Act
-            var result = await service.AllCurrentlyReadingBooksIdsByUserIdAsync("testUser", "The History");
+            var result = await service.AllCurrentlyReadingBooksIdsByUserIdAsync("testUser", "History");
             var resultTwo = await service.AllCurrentlyReadingBooksIdsByUserIdAsync("testUser", "NotAnExistingBook");
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 4, Is.True);
+            Assert.That(result.Books.First().Id == 3, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -857,7 +857,7 @@ namespace LibraVerse.Services.Test
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 4, Is.True);
+            Assert.That(result.Books.First().Id == 3, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -1166,7 +1166,7 @@ namespace LibraVerse.Services.Test
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 2, Is.True);
+            Assert.That(result.Books.First().Id == 3, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -1985,7 +1985,7 @@ namespace LibraVerse.Services.Test
             };
 
             // Act
-            var result = await service.BookReviewQuestionAsync(3);
+            var result = await service.BookReviewQuestionAsync(5);
 
             // Assert
             Assert.That(result.Title, Is.EqualTo(bookReviewQuestion.Title));

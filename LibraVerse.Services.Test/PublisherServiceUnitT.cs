@@ -69,10 +69,7 @@
         private Genre History;
         private Genre Historiography;
         private Genre Art;
-        private Genre Children;
-        private Genre Drama;
-        private Genre Science;
-        private Genre ClassicLiterature;
+
 
         //Articles
         private Article article;
@@ -144,6 +141,19 @@
                 YearPublished = 2024,
                 Price = 98.00m,
                 ImageUrl = "https://i2.helikon.bg/products/6357/24/246357/246357_b.jpg?t=1732093233",
+            };
+
+            Book5 = new Book()
+            {
+                Id = 5,
+                Title = "Around The World Of 80 Day",
+                Author = "Jaul Vern",
+                GenreId = 1,
+                Description = "The description of this book",
+                Pages = 280,
+                YearPublished = 1873,
+                Price = 25.90m,
+                ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Verne_Tour_du_Monde.jpg/330px-Verne_Tour_du_Monde.jpg",
             };
 
             bookStore = new BookStore()
@@ -878,12 +888,12 @@
         public async Task Test_AllBooksToChooseAsync_FiltersByGenre()
         {
             // Act
-            var result = publisherService.AllBooksToChooseAsync(1, "Adventure").Result;
+            var result = publisherService.AllBooksToChooseAsync(1, "Art").Result;
             var resultTwo = publisherService.AllBooksToChooseAsync(1, "History").Result;
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 1, Is.True);
+            Assert.That(result.Books.First().Id == 4, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -894,12 +904,12 @@
         public async Task Test_AllBooksToChooseAsync_FiltersBySearchTerm()
         {
             // Act
-            var result = publisherService.AllBooksToChooseAsync(1, null, "The Call of The Wild").Result;
+            var result = publisherService.AllBooksToChooseAsync(1, null, "The History of an Art").Result;
             var resultTwo = publisherService.AllBooksToChooseAsync(1, null, "NotAValidSearchTerm").Result;
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 1, Is.True);
+            Assert.That(result.Books.First().Id == 4, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -921,7 +931,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 2, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 1, 3, 5, 2 })); 
         }
 
         [Test]
@@ -940,7 +950,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 3, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 5, 3, 4, 1}));
         }
 
         [Test]
@@ -959,7 +969,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 4, 3, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 5, 4, 3 }));
         }
 
         [Test]
@@ -996,8 +1006,8 @@
 
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
-            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3, 2 }));
+            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() {4, 5, 2, 3 }));
         }
 
         [Test]
@@ -1016,7 +1026,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 3, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 2, 5, 4})); 
         }
 
         [Test]
@@ -1035,7 +1045,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 5, 2 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 2, 3, 4 }));
         }
 
         [Test]
@@ -1054,7 +1064,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 2, 4, 3 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 3, 2, 5 }));
         }
     }
 }
