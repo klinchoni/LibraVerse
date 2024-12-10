@@ -27,8 +27,9 @@ They can see the Home page of the application, displaying the purpose of the pla
 - .NET 8
 - ASP.NET Core MVC
 - Entity Framework Core
-- CSS
+- Microsoft SQL Server
 - HTML
+- CSS
 - JavaScript
 - NUnit
 
