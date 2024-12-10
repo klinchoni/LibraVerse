@@ -54,7 +54,7 @@ They can see the Home page of the application, displaying the purpose of the pla
   - dotnet ef database update
     OR
   - Add-Migration InitialDbCreate (in Package Manager Console) after that Update-Database (in Package Manager Console)                              
-4.Run the application
+4. Run the application
   - Open a browser and navigate to http://localhost:5000 to see the application in action.
     
 # 🔰 License
