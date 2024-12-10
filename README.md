@@ -24,9 +24,9 @@ Admins hold the same permissions as publishers but with additional administrativ
 They can see the Home, Register and Login pages of the application, displaying the purpose of the platform.
 
 ## 🏛️ Project Structure 🏛️
--LibraVerse.Web: Web application, including controllers and views.
--LibraVerse.Data: Database context (configurations, data seeding, repository) and migrations.
--LibraVerse.Core: Core models and business logic, Services providing application functionality.
+-LibraVerse.Web: Web application, including controllers and views.<br>
+-LibraVerse.Data: Database context (configurations, data seeding, repository) and migrations.<br>
+-LibraVerse.Core: Core models and business logic, Services providing application functionality.<br>
 -LibraVerse.Tests: Tests for various application components (services).
 
 # 👨🏻‍💻🦾💡 Technologies
