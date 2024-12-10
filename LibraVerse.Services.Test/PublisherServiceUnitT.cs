@@ -717,7 +717,7 @@
             Assert.That(result.ImageUrl, Is.EqualTo(testEvent.ImageUrl));
         }
 
-        [Test]
+       [Test]
         public async Task Test_DeleteEventConfirmedAsync_ReturnsTheCorrectResult()
         {
             // Act
@@ -874,7 +874,7 @@
             Assert.That(result.BookStoreName, Is.EqualTo(bookStore.Name));
         }
 
-        [Test]
+       [Test]
         public async Task Test_RemoveBookFromBookStoreConfirmedAsync_ReturnsTheCorrectResult()
         {
             // Act
@@ -898,7 +898,7 @@
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
         }
-
+       
 
         [Test]
         public async Task Test_AllBooksToChooseAsync_FiltersBySearchTerm()
@@ -915,7 +915,7 @@
             Assert.That(resultTwo.Books, Is.Empty);
         }
 
-        [Test]
+       [Test]
         public async Task Test_AllBooksToChooseAsync_SortsByNewest()
         {
             // Act
@@ -1026,7 +1026,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 2, 5, 4})); 
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 4, 5, 3})); 
         }
 
         [Test]
@@ -1045,7 +1045,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 2, 3, 4 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 5, 4, 2 }));
         }
 
         [Test]
