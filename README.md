@@ -22,6 +22,13 @@ Admins hold the same permissions as publishers but with additional administrativ
 
 ## 💀Unauthenticated users💀
 They can see the Home page of the application, displaying the purpose of the platform.
+
+## 🏛️ Project Structure 🏛️
+-LibraVerse.Web: Web application, including controllers and views.
+-LibraVerse.Data: Database context (configurations, data seeding, repository) and migrations.
+-LibraVerse.Core: Core models and business logic, Services providing application functionality.
+-LibraVerse.Tests: Tests for various application components (services).
+
 # 👨🏻‍💻🦾💡 Technologies
 - C#
 - .NET 8
@@ -33,5 +40,25 @@ They can see the Home page of the application, displaying the purpose of the pla
 - JavaScript
 - NUnit
 
+## 🧩Installation Requirements🧩
+- 🌐  .NET 8.0 SDK or later
+- 📶  SQL Server or another compatible database
+- </> Visual Studio 2022 or later
+- 
+### ✔️ Installation and Usage Instructions✔️ 
+- Clone the repository:
+git clone https://github.com/yourusername/LibraVerse.git
+
+- Database setup:
+  -- Create a new database in SQL Server.
+  -- Update the appsettings.json file with the correct database connection settings.
+  
+-Apply migrations:
+    dotnet ef database update | Add-Migration InitialDbCreate (in Package Manager Console)
+                                Update-Database (in Package Manager Console)
+                                
+-Run the application
+
+Open a browser and navigate to http://localhost:5000 to see the application in action.
 # 🔰 License
 This project is licensed under the MIT license - see the LICENSE.md file for details.
