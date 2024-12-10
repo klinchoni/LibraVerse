@@ -10,7 +10,7 @@ Welcome to **LibraVerse**, your mindful book place application built on **ASP.NE
 
 ### Enjoy reading with LibraVerse, where our goal is to make your reading experience relaxing, enjoyable, and uniquely comfortable!
 
-## 💻 Technologies
+## 👨🏻‍💻🦾💡 Technologies
 - C#
 - .NET 8
 - ASP.NET Core MVC
