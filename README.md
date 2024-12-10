@@ -20,6 +20,8 @@ Publishers enjoy the same privileges as users, with the added authority to manag
 ## 💸ADMIN💸
 Admins hold the same permissions as publishers but with additional administrative capabilities within the "Actions" section. This unique section grants admins the ability to elevate users to the role of publisher or admin and to revoke such statuses when necessary. This ensures a robust and dynamic management structure, enabling the seamless promotion and demotion of users within the platform.
 
+## 💀Unauthenticated users💀
+They can see the Home page of the application, displaying the purpose of the platform.
 # 👨🏻‍💻🦾💡 Technologies
 - C#
 - .NET 8
