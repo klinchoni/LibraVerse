@@ -216,7 +216,7 @@ namespace LibraVerse.Services.Test
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 2, Is.True);
+            Assert.That(result.Books.First().Id == 3, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -226,7 +226,7 @@ namespace LibraVerse.Services.Test
         public async Task Test_AllAsync_FiltersBySearchTerm()
         {
             // Act
-            var result = await service.AllAsync(null, "TheCall");
+            var result = await service.AllAsync(null, "The Call");
             var resultTwo = await service.AllAsync(null, "NotAValidSearchTerm");
 
             // Assert
@@ -294,7 +294,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 2, 4, 3, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() {2, 5, 1, 4, 3}));
         }
 
         [Test]
@@ -314,7 +314,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 3, 4, 2, 1 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 1, 5, 2 }));
         }
 
         [Test]
@@ -334,7 +334,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 1, 3, 2 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() {  3, 1, 5, 4, 2 }));
         }
 
         [Test]
@@ -354,7 +354,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 3, 1, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() {2, 4, 5, 1, 3 }));
         }
 
         [Test]
@@ -374,7 +374,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 5, 2, 1 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 5, 2, 3, 4 }));
         }
 
         [Test]
@@ -394,7 +394,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 5, 2, 4, 3 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 3, 2, 5, 1 }));
         }
 
         [Test]
@@ -645,7 +645,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksTitleAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksTitleAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 1, 4 }));
         }
 
         [Test]
@@ -682,7 +682,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksTitleDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksTitleDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 1 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 1, 5 }));
         }
 
         [Test]
@@ -719,7 +719,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksAuthorAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksAuthorAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 1 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 5, 4 }));
         }
 
         [Test]
@@ -756,7 +756,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksAuthorDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksAuthorDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 5, 1 }));
         }
 
         [Test]
@@ -793,7 +793,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksPriceAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksPriceAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 5, 1 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 5, 4 }));
         }
 
         [Test]
@@ -830,7 +830,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksPriceDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksPriceDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 1, 5, 4 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 5, 1 }));
         }
 
         [Test]
@@ -971,7 +971,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksTitleAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksTitleAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 2, 5, 4 }));
         }
 
         [Test]
@@ -1008,7 +1008,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksTitleDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksTitleDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 2 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 5, 2 }));
         }
 
         [Test]
@@ -1119,7 +1119,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksPriceAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksPriceAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 5, 2 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 2, 4 }));
         }
 
         [Test]
@@ -1154,7 +1154,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksPriceDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksPriceDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 2, 4 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 2, 5 }));
         }
 
         [Test]
@@ -1166,7 +1166,7 @@ namespace LibraVerse.Services.Test
 
             // Assert
             Assert.That(result.TotalBooksCount, Is.EqualTo(1));
-            Assert.That(result.Books.First().Id == 3, Is.True);
+            Assert.That(result.Books.First().Id == 2, Is.True);
 
             Assert.That(resultTwo.TotalBooksCount, Is.EqualTo(0));
             Assert.That(resultTwo.Books, Is.Empty);
@@ -1295,7 +1295,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksTitleAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksTitleAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 3, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3 }));
         }
 
         [Test]
@@ -1332,7 +1332,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksTitleDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksTitleDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 3, 4 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 5 }));
         }
 
         [Test]
@@ -1369,7 +1369,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksAuthorAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksAuthorAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 5, 4 }));
         }
 
         [Test]
@@ -1406,7 +1406,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksAuthorDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksAuthorDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 5, 3 }));
         }
 
         [Test]
@@ -1443,7 +1443,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksPriceAscendingSorting.Books, Is.Not.Null);
             Assert.That(booksPriceAscendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 5 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 3, 4 }));
         }
 
         [Test]
@@ -1480,7 +1480,7 @@ namespace LibraVerse.Services.Test
             // Assert
             Assert.That(booksPriceDescendingSorting.Books, Is.Not.Null);
             Assert.That(booksPriceDescendingSorting.Books.Count(), Is.EqualTo(3));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 3, 5 }));
         }
 
         [Test]

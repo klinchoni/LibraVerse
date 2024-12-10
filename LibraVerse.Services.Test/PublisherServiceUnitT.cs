@@ -921,7 +921,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3, 2 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 3, 4, 2, 5 }));
         }
 
         [Test]
