@@ -21,7 +21,7 @@ Publishers enjoy the same privileges as users, with the added authority to manag
 Admins hold the same permissions as publishers but with additional administrative capabilities within the "Actions" section. This unique section grants admins the ability to elevate users to the role of publisher or admin and to revoke such statuses when necessary. This ensures a robust and dynamic management structure, enabling the seamless promotion and demotion of users within the platform.
 
 ## 💀Unauthenticated users💀
-They can see the Home page of the application, displaying the purpose of the platform.
+They can see the Home, Register and Login pages of the application, displaying the purpose of the platform.
 
 ## 🏛️ Project Structure 🏛️
 -LibraVerse.Web: Web application, including controllers and views.
