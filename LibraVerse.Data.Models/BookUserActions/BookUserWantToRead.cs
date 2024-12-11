@@ -3,7 +3,7 @@
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.ComponentModel.DataAnnotations;
-    using Microsoft.AspNetCore.Identity;
+
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.Roles;
 
