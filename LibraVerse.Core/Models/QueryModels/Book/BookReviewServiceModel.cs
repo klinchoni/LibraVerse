@@ -1,6 +1,7 @@
 ﻿namespace LibraVerse.Core.Models.QueryModels.Book
 {
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.EntityValidationMessages.Data;
     using static LibraVerse.Common.Constants.EntityValidationConstants.BookReview;
     public class BookReviewServiceModel
