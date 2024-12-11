@@ -1,9 +1,10 @@
 ﻿namespace LibraVerse.Data.Models.Carts
 {
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Data.Models.Mappings;
     using LibraVerse.Data.Models.Roles;
+
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
