@@ -55,7 +55,7 @@ They can see the Home, Register and Login pages of the application, displaying t
     OR
   - Add-Migration InitialDbCreate (in Package Manager Console) after that Update-Database (in Package Manager Console)                              
 4. Run the application
-  - Open a browser and navigate to http://localhost:5000 to see the application in action.
+  - Open a browser and navigate to localhost to see the application in action.
     
 # 🔰 License
 This project is licensed under the MIT license - see the LICENSE.md file for details.
