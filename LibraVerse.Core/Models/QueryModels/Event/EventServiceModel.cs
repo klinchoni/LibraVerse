@@ -1,7 +1,9 @@
 ﻿namespace LibraVerse.Core.Models.QueryModels.Event
 {
-    using LibraVerse.Core.Contracts;
     using System.ComponentModel.DataAnnotations;
+
+    using LibraVerse.Core.Contracts;
+
     using static LibraVerse.Common.EntityValidationMessages.Data;
     using static LibraVerse.Common.Constants.EntityValidationConstants.Event;
     public class EventServiceModel : IEventModel

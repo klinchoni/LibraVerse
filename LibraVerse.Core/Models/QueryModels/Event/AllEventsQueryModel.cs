@@ -1,9 +1,9 @@
-﻿using LibraVerse.Core.Enums;
-using LibraVerse.Core.Models.QueryModels.Book;
-using System.ComponentModel.DataAnnotations;
-
-namespace LibraVerse.Core.Models.QueryModels.Event
+﻿namespace LibraVerse.Core.Models.QueryModels.Event
 {
+    using System.ComponentModel.DataAnnotations;
+
+    using LibraVerse.Core.Enums;
+
     public class AllEventsQueryModel
     {
         public int EventsPerPage { get; } = 8;
