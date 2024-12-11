@@ -1,9 +1,12 @@
 ﻿namespace LibraVerse.Data.Models.Books
 {
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Data.Models.Mappings;
+
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.BookConstants;
 
     public class Book

@@ -1,7 +1,9 @@
 ﻿namespace LibraVerse.Data.Models.Books
 {
     using Microsoft.EntityFrameworkCore;
+
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.Genre;
 
     public class Genre
