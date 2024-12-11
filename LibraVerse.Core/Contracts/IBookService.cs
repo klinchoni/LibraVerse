@@ -1,6 +1,7 @@
 ﻿namespace LibraVerse.Core.Contracts
 {
     using LibraVerse.Core.Enums;
+
     using LibraVerse.Core.Models.QueryModels.Book;
     using LibraVerse.Core.Models.QueryModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.Book;

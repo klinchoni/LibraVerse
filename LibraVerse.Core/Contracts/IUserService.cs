@@ -1,8 +1,9 @@
 ﻿namespace LibraVerse.Core.Contracts
 {
     using LibraVerse.Core.Enums;
+
     using LibraVerse.Core.Models.QueryModels.Admin;
-    using LibraVerse.Core.Models.ViewModels.BookStore;
+
     using LibraVerse.Data.Models.Roles;
 
     public interface IUserService

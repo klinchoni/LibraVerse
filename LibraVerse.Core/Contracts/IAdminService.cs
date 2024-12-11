@@ -1,7 +1,6 @@
 ﻿namespace LibraVerse.Core.Contracts
 {
     using LibraVerse.Core.Models.QueryModels.Admin;
-    using LibraVerse.Core.Models.ViewModels.Admin;
 
     public interface IAdminService
     {

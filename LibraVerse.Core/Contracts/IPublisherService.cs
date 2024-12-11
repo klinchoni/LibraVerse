@@ -1,14 +1,15 @@
-﻿using LibraVerse.Core.Enums;
-using LibraVerse.Core.Models.QueryModels.Book;
-using LibraVerse.Core.Models.ViewModels.Article;
-using LibraVerse.Core.Models.ViewModels.Book;
-using LibraVerse.Core.Models.ViewModels.BookStore;
-using LibraVerse.Core.Models.ViewModels.Event;
-using LibraVerse.Data.Models.Mappings;
-using LibraVerse.Data.Models.Roles;
-
-namespace LibraVerse.Core.Contracts
+﻿namespace LibraVerse.Core.Contracts
 {
+    using LibraVerse.Core.Enums;
+
+    using LibraVerse.Core.Models.QueryModels.Book;
+    using LibraVerse.Core.Models.ViewModels.Article;
+    using LibraVerse.Core.Models.ViewModels.Book;
+    using LibraVerse.Core.Models.ViewModels.BookStore;
+    using LibraVerse.Core.Models.ViewModels.Event;
+
+    using LibraVerse.Data.Models.Mappings;
+    using LibraVerse.Data.Models.Roles;
     public interface IPublisherService
     {
         Task<bool> ExistsByPublisherIdAsync(int publisherId);

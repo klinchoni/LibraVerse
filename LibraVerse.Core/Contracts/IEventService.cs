@@ -1,8 +1,10 @@
 ﻿namespace LibraVerse.Core.Contracts
 {
     using LibraVerse.Core.Enums;
+
     using LibraVerse.Core.Models.QueryModels.Event;
     using LibraVerse.Core.Models.ViewModels.Event;
+
     using LibraVerse.Data.Models.Events;
 
     public interface IEventService
