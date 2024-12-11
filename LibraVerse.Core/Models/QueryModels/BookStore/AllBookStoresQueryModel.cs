@@ -1,10 +1,8 @@
-﻿using LibraVerse.Core.Contracts;
-using LibraVerse.Core.Enums;
-using LibraVerse.Core.Models.QueryModels.Article;
-using System.ComponentModel.DataAnnotations;
-
-namespace LibraVerse.Core.Models.QueryModels.BookStore
+﻿namespace LibraVerse.Core.Models.QueryModels.BookStore
 {
+    using LibraVerse.Core.Enums;
+
+    using System.ComponentModel.DataAnnotations;
     public class AllBookStoresQueryModel
     {
         public int BookStoresPerPage { get; } = 8;
