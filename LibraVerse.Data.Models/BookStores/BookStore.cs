@@ -1,8 +1,11 @@
 ﻿namespace LibraVerse.Data.Models.BookStores
 {
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Data.Models.Mappings;
+
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.BookStore;
 
     public class BookStore
