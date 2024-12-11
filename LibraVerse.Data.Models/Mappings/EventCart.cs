@@ -1,8 +1,10 @@
 ﻿namespace LibraVerse.Data.Models.Mappings
 {
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Data.Models.Carts;
     using LibraVerse.Data.Models.Events;
+
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
