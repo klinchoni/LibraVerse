@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+
     using LibraVerse.Core.Contracts;
 
     public class HomeController : BaseController

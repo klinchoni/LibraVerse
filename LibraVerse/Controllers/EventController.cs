@@ -2,12 +2,10 @@
 {
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using LibraVerse.Attributes;
+
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Extensions;
     using LibraVerse.Core.Models.QueryModels.Event;
-    using LibraVerse.Core.Models.ViewModels.Event;
-    using System.Security.Claims;
 
     public class EventController : BaseController
     {
