@@ -54,7 +54,6 @@
                         }
                         @if (User.IsAdmin())
                         {
-                            @await Component.InvokeAsync(nameof(MainMenuComponent))
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="Admin" asp-controller="User" asp-action="All" title="Admin">Действия</a>
                             </li>
