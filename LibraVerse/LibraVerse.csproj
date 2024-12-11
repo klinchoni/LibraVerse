@@ -45,6 +45,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>

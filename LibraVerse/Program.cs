@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 using LibraVerse.ModelBinders;
-using LibraVerse.Core.Contracts;
-using LibraVerse.Core.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
