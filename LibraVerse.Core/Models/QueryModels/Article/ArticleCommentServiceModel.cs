@@ -1,6 +1,7 @@
 ﻿namespace LibraVerse.Core.Models.QueryModels.Article
 {
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.EntityValidationMessages.Data;
     using static LibraVerse.Common.Constants.EntityValidationConstants.ArticleComment;
     public class ArticleCommentServiceModel

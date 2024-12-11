@@ -1,8 +1,7 @@
-﻿using LibraVerse.Core.Enums;
-using System.ComponentModel.DataAnnotations;
-
-namespace LibraVerse.Core.Models.QueryModels.Article
+﻿namespace LibraVerse.Core.Models.QueryModels.Article
 {
+    using LibraVerse.Core.Enums;
+    using System.ComponentModel.DataAnnotations;
     public class AllArticleCommentsQueryModel
     {
         public int ArticleId { get; set; }
