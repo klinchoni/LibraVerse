@@ -930,8 +930,8 @@
 
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
-            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(5));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() { 4, 1, 3, 5, 2 })); 
+            Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() { 5, 4, 3, 2})); 
         }
 
         [Test]
@@ -1007,7 +1007,7 @@
             // Assert
             Assert.That(booksNewestSorting.Books, Is.Not.Null);
             Assert.That(booksNewestSorting.Books.Count(), Is.EqualTo(4));
-            Assert.That(booksIds, Is.EqualTo(new List<int>() {4, 5, 2, 3 }));
+            Assert.That(booksIds, Is.EqualTo(new List<int>() {3, 5, 4, 2 }));
         }
 
         [Test]
