@@ -1,7 +1,9 @@
 ﻿namespace LibraVerse.Core.Models.ViewModels.Article
 {
-    using LibraVerse.Core.Contracts;
     using System.ComponentModel.DataAnnotations;
+
+    using LibraVerse.Core.Contracts;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.Article;
     using static LibraVerse.Common.EntityValidationMessages.Data;
 
