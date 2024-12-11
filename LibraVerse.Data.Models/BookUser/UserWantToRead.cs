@@ -3,9 +3,9 @@
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.ComponentModel.DataAnnotations;
+
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.Roles;
-    using static LibraVerse.Common.Constants.EntityValidationConstants;
 
     public class UserWantToRead
     {
