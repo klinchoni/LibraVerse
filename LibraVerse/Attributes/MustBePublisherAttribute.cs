@@ -2,7 +2,9 @@
 {
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Filters;
+
     using LibraVerse.Core.Contracts;
+
     using System.Security.Claims;
 
     public class MustBePublisherAttribute : ActionFilterAttribute
