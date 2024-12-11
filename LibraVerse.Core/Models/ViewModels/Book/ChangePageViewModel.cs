@@ -1,6 +1,7 @@
 ﻿namespace LibraVerse.Core.Models.ViewModels.Book
 {
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.EntityValidationMessages.Data;
     using static LibraVerse.Common.Constants.EntityValidationConstants.BookCurrentlyReadingConstants;
 
