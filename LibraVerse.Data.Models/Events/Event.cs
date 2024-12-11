@@ -1,8 +1,10 @@
 ﻿namespace LibraVerse.Data.Models.Events
 {
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Data.Models.Mappings;
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.Event;
 
     public class Event
