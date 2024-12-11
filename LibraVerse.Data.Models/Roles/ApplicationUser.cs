@@ -2,6 +2,7 @@
 {
     using Microsoft.AspNetCore.Identity;
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.ApplicationUserConstant;
 
     public class ApplicationUser : IdentityUser
