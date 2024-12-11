@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using LibraVerse.Core.Contracts;
-using LibraVerse.Core.Models.QueryModels.Admin;
-using LibraVerse.Data.Models.Roles;
-using static LibraVerse.Common.AdminConstants;
-using LibraVerse.Data.Repository;
-
-namespace LibraVerse.Core.Services
+﻿namespace LibraVerse.Core.Services
 {
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+
+    using LibraVerse.Core.Contracts;
+    using LibraVerse.Core.Models.QueryModels.Admin;
+
+    using LibraVerse.Data.Repository;
+    using LibraVerse.Data.Models.Roles;
+
+    using static LibraVerse.Common.AdminConstants;
+
+
     public class AdminService : IAdminService
     {
         private readonly UserManager<ApplicationUser> userManager;

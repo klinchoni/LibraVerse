@@ -1,14 +1,17 @@
 ﻿namespace LibraVerse.Core.Services
 {
     using Microsoft.EntityFrameworkCore;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Enums;
     using LibraVerse.Core.Models.QueryModels.Event;
     using LibraVerse.Core.Models.ViewModels.Event;
+
     using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Events;
-    using System.Linq;
-    using System.Threading.Tasks;
+
 
     public class EventService : IEventService
     {

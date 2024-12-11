@@ -1,18 +1,20 @@
 ﻿namespace LibraVerse.Core.Services
 {
     using Microsoft.EntityFrameworkCore;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Enums;
     using LibraVerse.Core.Models.QueryModels.Book;
     using LibraVerse.Core.Models.QueryModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.Book;
+
     using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.BookStores;
     using LibraVerse.Data.Models.BookUserActions;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
 
     public class BookService : IBookService
     {

@@ -1,6 +1,8 @@
 ﻿namespace LibraVerse.Core.Services
 {
     using Microsoft.EntityFrameworkCore;
+    using System.Threading.Tasks;
+
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Enums;
     using LibraVerse.Core.Models.QueryModels.Book;
@@ -8,6 +10,7 @@
     using LibraVerse.Core.Models.ViewModels.Book;
     using LibraVerse.Core.Models.ViewModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.Event;
+
     using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Articles;
     using LibraVerse.Data.Models.Books;
@@ -16,7 +19,7 @@
     using LibraVerse.Data.Models.Events;
     using LibraVerse.Data.Models.Mappings;
     using LibraVerse.Data.Models.Roles;
-    using System.Threading.Tasks;
+
 
     public class PublisherService : IPublisherService
     {

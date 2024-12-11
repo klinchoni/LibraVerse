@@ -1,15 +1,18 @@
 ﻿namespace LibraVerse.Core.Services
 {
+    using System;
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Enums;
     using LibraVerse.Core.Models.QueryModels.Book;
     using LibraVerse.Core.Models.QueryModels.BookStore;
     using LibraVerse.Core.Models.ViewModels.BookStore;
+
     using LibraVerse.Data.Repository;
     using LibraVerse.Data.Models.Books;
     using LibraVerse.Data.Models.BookStores;
-    using System;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.BookStore;
 
     public class BookStoreService : IBookStoreService
