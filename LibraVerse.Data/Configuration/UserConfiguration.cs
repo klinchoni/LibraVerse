@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
     using LibraVerse.Data.Models.Roles;
     using LibraVerse.Data.Seeding;
 

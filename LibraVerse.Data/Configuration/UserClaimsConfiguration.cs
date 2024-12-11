@@ -1,9 +1,9 @@
 ﻿namespace LibraVerse.Data.Configuration
 {
-    using LibraVerse.Data.Seeding;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using LibraVerse.Data.Seeding;
 
     public class UserClaimsConfiguration : IEntityTypeConfiguration<IdentityUserClaim<string>>
     {

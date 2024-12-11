@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
     using LibraVerse.Data.Models.BookStores;
     using LibraVerse.Data.Seeding;
 
