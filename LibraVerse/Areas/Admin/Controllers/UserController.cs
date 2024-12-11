@@ -3,13 +3,17 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+
     using LibraVerse.Core.Contracts;
     using LibraVerse.Core.Models.QueryModels.Admin;
-    using LibraVerse.Core.Models.ViewModels.Admin;
+
     using LibraVerse.Data.Models.Roles;
+
     using System.Security.Claims;
-    using static LibraVerse.Common.AdminConstants;
     using static System.Security.Claims.ClaimsPrincipalExtensions;
+
+    using static LibraVerse.Common.AdminConstants;
+
 
     public class UserController : AdminBaseController
     {
