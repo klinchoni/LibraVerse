@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.Article;
 
     public class Article

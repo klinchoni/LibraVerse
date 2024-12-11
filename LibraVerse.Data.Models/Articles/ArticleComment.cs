@@ -1,10 +1,11 @@
 ﻿namespace LibraVerse.Data.Models.Articles
 {
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
+
     using LibraVerse.Data.Models.Roles;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     using static LibraVerse.Common.Constants.EntityValidationConstants.ArticleComment;
 
     public class ArticleComment
